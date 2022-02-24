@@ -1,4 +1,4 @@
-.navright{
-    margin-left: auto;
-    border: solid red;
+.howto img {
+    margin: auto;    
+    display: block;
 }
