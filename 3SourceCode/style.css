@@ -3,13 +3,26 @@
     margin: auto;    
     display: block;
 }
+@media only screen and (min-width: 1200px) {
+    .centerver{
+        width: 45%;
+        margin: auto;
+    }
+}
+/* จอใหญ่ */
 @media only screen and (min-width: 600px) {
     .howto img {
         width: 60%;
     }
+    
 }
+/* จอเล็ก */
 @media only screen and (max-width: 600px) {
     .howto img {
         width: 100%;
     }
+}
+
+.centerver{
+    margin: auto;
 }
