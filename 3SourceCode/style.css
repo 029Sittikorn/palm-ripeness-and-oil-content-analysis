@@ -24,8 +24,15 @@
     .howto img {
         width: 100%;
     }
+    .texttopmarginresult{
+        margin-top: 30px;
+    }
 }
 
 .centerver{
     margin: auto;
+    text-align: center;
+}
+.releft{
+    text-align: left;
 }
