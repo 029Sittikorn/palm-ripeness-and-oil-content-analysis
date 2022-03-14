@@ -43,13 +43,7 @@
                 </nav>
             </div>
         </div>
-        <center>
-            <div class="d-flex justify-content-center mt-4">
-                <a href="#" class="btn btn-primary"><img src="img/upload (1).png" alt="" style="width: 20px;"
-                        class="me-2">Upload Image</a>
-            </div>
-        </center>
-        <div class="container p-4 shadow">
+        <div class="container p-4 shadow  mt-4">
             <ul class="nav nav-pills" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="pills-result-tab" data-bs-toggle="pill"
@@ -67,45 +61,363 @@
                 <div class="tab-pane fade show active" id="pills-result" role="tabpanel"
                     aria-labelledby="pills-result-tab">
                     <!-- Show in Manage knowledge base tap -->
-                    <div class="col-lg-6 col-12 mt-4"><img src="img/IMG_4553.JPG" class="img-fluid"
-                            alt="Responsive image">
+                    <div class="row">
+                        <div class="d-flex justify-content-center mt-4 col-12">
+                            <a href="#" class="btn btn-primary"><img src="img/upload (1).png" alt=""
+                                    style="width: 20px;" class="me-2">Upload Image</a>
+                        </div>
+                        <div class="col-lg-6 col-12 mt-4"><img src="img/IMG_4553.JPG" class="img-fluid"
+                                alt="Responsive image">
+                        </div>
+                        <div class=" col-12 col-lg-6 p-lg-5 centerver">
+                            <div class="bartext1 d-flex justify-content-between">
+                                <p>Ripeness</p>
+                                <p class="text-right">ดิบ</p>
+                            </div>
+                            <div class="progress" style="height: 25px;">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                                    style="width: 25%; background-color:#000000;" aria-valuenow="25" aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    ดิบ</div>
+                                <div class="progress-bar" role="progressbar"
+                                    style="width: 25%; background-color:#3e0001;" aria-valuenow="25" aria-valuemin="0"
+                                    aria-valuemax="100">เกือบดิบ</div>
+                                <div class="progress-bar" role="progressbar"
+                                    style="width: 25%; background-color:#7c0000;" aria-valuenow="25" aria-valuemin="0"
+                                    aria-valuemax="100">เกือบสุก</div>
+                                <div class="progress-bar" role="progressbar"
+                                    style="width: 25%; background-color:#ba0001;" aria-valuenow="25" aria-valuemin="0"
+                                    aria-valuemax="100">สุก</div>
+                            </div>
+                            <div class="bartext2 d-flex justify-content-between mt-4">
+                                <p>Oil content</p>
+                                <p class="text-right">15.05%</p>
+                            </div>
+                            <div class="progress" style="height: 25px;">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                                    style="width: 15.05%;" aria-valuenow="15.05" aria-valuemin="0" aria-valuemax="100">
+                                    15.05%</div>
+                            </div>
+                            <center>
+                                <button type="button" class="btn btn-outline-primary mt-4">Add to knowledge
+                                    base</button>
+                            </center>
+                        </div>
+                        <div class="col-12 mt-5">
+                            <!-- Editable table -->
+                            <div class="card">
+                                <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
+                                    Knowledge base table
+                                </h3>
+                                <div class="card-body">
+                                    <div id="table" class="table-editable">
+                                        <table
+                                            class="table table-bordered table-responsive-md table-striped text-center">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">ID</th>
+                                                    <th class="text-center">Number of red pixel</th>
+                                                    <th class="text-center">Number of green pixel</th>
+                                                    <th class="text-center">Number of blue pixel</th>
+                                                    <th class="text-center">Ripeness</th>
+                                                    <th class="text-center">Oil content</th>
+                                                    <th class="text-center">Remove</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="pt-3-half" contenteditable="true">1</td>
+                                                    <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                                    <td class="pt-3-half" contenteditable="true">30</td>
+                                                    <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                                    <td class="pt-3-half" contenteditable="true">Spain</td>
+                                                    <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                                    <td>
+                                                        <span class="table-remove"><button type="button"
+                                                                class="btn btn-danger btn-rounded btn-sm my-0">
+                                                                Remove
+                                                            </button></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-3-half" contenteditable="true">2</td>
+                                                    <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                                    <td class="pt-3-half" contenteditable="true">30</td>
+                                                    <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                                    <td class="pt-3-half" contenteditable="true">Spain</td>
+                                                    <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                                    <td>
+                                                        <span class="table-remove"><button type="button"
+                                                                class="btn btn-danger btn-rounded btn-sm my-0">
+                                                                Remove
+                                                            </button></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-3-half" contenteditable="true">3</td>
+                                                    <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                                    <td class="pt-3-half" contenteditable="true">30</td>
+                                                    <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                                    <td class="pt-3-half" contenteditable="true">Spain</td>
+                                                    <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                                    <td>
+                                                        <span class="table-remove"><button type="button"
+                                                                class="btn btn-danger btn-rounded btn-sm my-0">
+                                                                Remove
+                                                            </button></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-3-half" contenteditable="true">4</td>
+                                                    <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                                    <td class="pt-3-half" contenteditable="true">30</td>
+                                                    <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                                    <td class="pt-3-half" contenteditable="true">Spain</td>
+                                                    <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                                    <td>
+                                                        <span class="table-remove"><button type="button"
+                                                                class="btn btn-danger btn-rounded btn-sm my-0">
+                                                                Remove
+                                                            </button></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-3-half" contenteditable="true">5</td>
+                                                    <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                                    <td class="pt-3-half" contenteditable="true">30</td>
+                                                    <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                                    <td class="pt-3-half" contenteditable="true">Spain</td>
+                                                    <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                                    <td>
+                                                        <span class="table-remove"><button type="button"
+                                                                class="btn btn-danger btn-rounded btn-sm my-0">
+                                                                Remove
+                                                            </button></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-3-half" contenteditable="true">6</td>
+                                                    <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                                    <td class="pt-3-half" contenteditable="true">30</td>
+                                                    <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                                    <td class="pt-3-half" contenteditable="true">Spain</td>
+                                                    <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                                    <td>
+                                                        <span class="table-remove"><button type="button"
+                                                                class="btn btn-danger btn-rounded btn-sm my-0">
+                                                                Remove
+                                                            </button></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-3-half" contenteditable="true">7</td>
+                                                    <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                                    <td class="pt-3-half" contenteditable="true">30</td>
+                                                    <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                                    <td class="pt-3-half" contenteditable="true">Spain</td>
+                                                    <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                                    <td>
+                                                        <span class="table-remove"><button type="button"
+                                                                class="btn btn-danger btn-rounded btn-sm my-0">
+                                                                Remove
+                                                            </button></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-3-half" contenteditable="true">8</td>
+                                                    <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                                    <td class="pt-3-half" contenteditable="true">30</td>
+                                                    <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                                    <td class="pt-3-half" contenteditable="true">Spain</td>
+                                                    <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                                    <td>
+                                                        <span class="table-remove"><button type="button"
+                                                                class="btn btn-danger btn-rounded btn-sm my-0">
+                                                                Remove
+                                                            </button></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-3-half" contenteditable="true">9</td>
+                                                    <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                                    <td class="pt-3-half" contenteditable="true">30</td>
+                                                    <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                                    <td class="pt-3-half" contenteditable="true">Spain</td>
+                                                    <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                                    <td>
+                                                        <span class="table-remove"><button type="button"
+                                                                class="btn btn-danger btn-rounded btn-sm my-0">
+                                                                Remove
+                                                            </button></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pt-3-half" contenteditable="true">10</td>
+                                                    <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                                    <td class="pt-3-half" contenteditable="true">30</td>
+                                                    <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                                    <td class="pt-3-half" contenteditable="true">Spain</td>
+                                                    <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                                    <td>
+                                                        <span class="table-remove"><button type="button"
+                                                                class="btn btn-danger btn-rounded btn-sm my-0">
+                                                                Remove
+                                                            </button></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Editable table -->
+                        </div>
                     </div>
-                    <div class=" col-12 col-lg-6 p-lg-5 centerver">
-                        <div class="bartext1 d-flex justify-content-between">
-                            <p>Ripeness</p>
-                            <p class="text-right">ดิบ</p>
-                        </div>
-                        <div class="progress" style="height: 25px;">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                                style="width: 25%; background-color:#000000;" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100">
-                                ดิบ</div>
-                            <div class="progress-bar" role="progressbar" style="width: 25%; background-color:#3e0001;"
-                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">เกือบดิบ</div>
-                            <div class="progress-bar" role="progressbar" style="width: 25%; background-color:#7c0000;"
-                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">เกือบสุก</div>
-                            <div class="progress-bar" role="progressbar" style="width: 25%; background-color:#ba0001;"
-                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">สุก</div>
-                        </div>
-                        <div class="bartext2 d-flex justify-content-between mt-2">
-                            <p>Oil content</p>
-                            <p class="text-right">15.05%</p>
-                        </div>
-                        <div class="progress" style="height: 25px;">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                                style="width: 15.05%;" aria-valuenow="15.05" aria-valuemin="0" aria-valuemax="100">
-                                15.05%</div>
-                        </div>
-                        <center>
-                            <button type="button" class="btn btn-outline-primary mt-3">Add</button>
-                            <button type="button" class="btn btn-outline-primary mt-3">Update</button>
-                            <button type="button" class="btn btn-outline-primary mt-3">Delete</button>
-                        </center>
-                    </div>
+
                 </div>
                 <div class="tab-pane fade" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
                     <!-- Show in Manage Purchase form tap -->
-
+                    <!-- Editable table -->
+                    <div class="card col-12 mt-4">
+                        <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
+                            Purchase form table
+                        </h3>
+                        <div class="card-body">
+                            <div id="table" class="table-editable">
+                                <table class="table table-bordered table-responsive-md table-striped text-center">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Person Name</th>
+                                            <th class="text-center">Age</th>
+                                            <th class="text-center">Company Name</th>
+                                            <th class="text-center">Country</th>
+                                            <th class="text-center">City</th>
+                                            <th class="text-center">Remove</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                            <td class="pt-3-half" contenteditable="true">30</td>
+                                            <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                            <td class="pt-3-half" contenteditable="true">Spain</td>
+                                            <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                            <td>
+                                                <span class="table-remove"><button type="button"
+                                                        class="btn btn-danger btn-rounded btn-sm my-0">
+                                                        Remove
+                                                    </button></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                            <td class="pt-3-half" contenteditable="true">30</td>
+                                            <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                            <td class="pt-3-half" contenteditable="true">Spain</td>
+                                            <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                            <td>
+                                                <span class="table-remove"><button type="button"
+                                                        class="btn btn-danger btn-rounded btn-sm my-0">
+                                                        Remove
+                                                    </button></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                            <td class="pt-3-half" contenteditable="true">30</td>
+                                            <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                            <td class="pt-3-half" contenteditable="true">Spain</td>
+                                            <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                            <td>
+                                                <span class="table-remove"><button type="button"
+                                                        class="btn btn-danger btn-rounded btn-sm my-0">
+                                                        Remove
+                                                    </button></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                            <td class="pt-3-half" contenteditable="true">30</td>
+                                            <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                            <td class="pt-3-half" contenteditable="true">Spain</td>
+                                            <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                            <td>
+                                                <span class="table-remove"><button type="button"
+                                                        class="btn btn-danger btn-rounded btn-sm my-0">
+                                                        Remove
+                                                    </button></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                            <td class="pt-3-half" contenteditable="true">30</td>
+                                            <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                            <td class="pt-3-half" contenteditable="true">Spain</td>
+                                            <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                            <td>
+                                                <span class="table-remove"><button type="button"
+                                                        class="btn btn-danger btn-rounded btn-sm my-0">
+                                                        Remove
+                                                    </button></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                            <td class="pt-3-half" contenteditable="true">30</td>
+                                            <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                            <td class="pt-3-half" contenteditable="true">Spain</td>
+                                            <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                            <td>
+                                                <span class="table-remove"><button type="button"
+                                                        class="btn btn-danger btn-rounded btn-sm my-0">
+                                                        Remove
+                                                    </button></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                            <td class="pt-3-half" contenteditable="true">30</td>
+                                            <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                            <td class="pt-3-half" contenteditable="true">Spain</td>
+                                            <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                            <td>
+                                                <span class="table-remove"><button type="button"
+                                                        class="btn btn-danger btn-rounded btn-sm my-0">
+                                                        Remove
+                                                    </button></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                            <td class="pt-3-half" contenteditable="true">30</td>
+                                            <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                            <td class="pt-3-half" contenteditable="true">Spain</td>
+                                            <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                            <td>
+                                                <span class="table-remove"><button type="button"
+                                                        class="btn btn-danger btn-rounded btn-sm my-0">
+                                                        Remove
+                                                    </button></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                            <td class="pt-3-half" contenteditable="true">30</td>
+                                            <td class="pt-3-half" contenteditable="true">Deepends</td>
+                                            <td class="pt-3-half" contenteditable="true">Spain</td>
+                                            <td class="pt-3-half" contenteditable="true">Madrid</td>
+                                            <td>
+                                                <span class="table-remove"><button type="button"
+                                                        class="btn btn-danger btn-rounded btn-sm my-0">
+                                                        Remove
+                                                    </button></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

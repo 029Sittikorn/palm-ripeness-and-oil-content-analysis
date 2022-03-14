@@ -34,7 +34,8 @@
                 <a class="nav-link" href="index.html #howto">How to use</a>
               </li>
               <li class="nav-item" style="margin-right: 0;">
-                <button type="button" class="btn btn-outline-primary"><a href="adminLogin.html" class="text-decoration-none">For admin</a> </button>
+                <button type="button" class="btn btn-outline-primary"><a href="adminLogin.html"
+                    class="text-decoration-none">For admin</a> </button>
               </li>
             </ul>
           </div>
@@ -47,7 +48,7 @@
             class="me-2">Upload Image</a>
       </div>
     </center>
-    <div class="container p-4 shadow">
+    <div class="container p-4 shadow mt-4">
       <ul class="nav nav-pills" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="pills-result-tab" data-bs-toggle="pill" data-bs-target="#pills-result"
@@ -58,7 +59,7 @@
           <button class="nav-link" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button"
             role="tab" aria-controls="pills-form" aria-selected="false">Purchase form</button>
         </li>
-        
+
       </ul>
 
       <div class="tab-content" id="pills-tabContent">
@@ -67,29 +68,29 @@
           <div class="col-lg-6 col-12 mt-4">
             <img src="img/S__16187531.png" class="img-fluid" alt="Responsive image">
           </div>
-          <div class="col-12 col-lg-6 p-lg-5 centerver">
+          <div class="col-12 col-lg-6 centerver">
             <div class="">
-              <h4 class="texttopmarginresult" >Analysis results details</h4>
-              <div class="mt-4">
+              <h4 class="texttopmarginresult">Analysis results details</h4>
+              <div class="mt-4 centerver">
                 <div class="row">
                   <div class="col releft">
-                    <p>จำนวนทะลายสุก</p>
+                    <p>ทะลายสุก</p>
                   </div>
                   <div class="col">
-                    <p><b>7</b></p>
+                    <p><b>6</b></p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col releft">
-                    <p>จำนวนทะลายเกือบสุก</p>
+                    <p>ทะลายเกือบสุก</p>
                   </div>
                   <div class="col">
-                    <p><b>3</b></p>
+                    <p><b>4</b></p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col releft">
-                    <p>จำนวนทะลายเกือบดิบ</p>
+                    <p>ทะลายเกือบดิบ</p>
                   </div>
                   <div class="col">
                     <p><b>1</b></p>
@@ -97,10 +98,10 @@
                 </div>
                 <div class="row">
                   <div class="col releft">
-                    <p>จำนวนทะลาบดิบ</p>
+                    <p>ทะลาบดิบ</p>
                   </div>
                   <div class="col">
-                    <p><b>1</b></p>
+                    <p><b>4</b></p>
                   </div>
                 </div>
               </div>
@@ -115,105 +116,138 @@
           <!-- Show in form tap -->
           <div class="container">
             <div class="row mt-4">
+              <!-- 11111111111111111111 -->
               <div class="col-lg">
                 <form>
                   <div class="form-group">
-                    <label for="rn">Ripeness</label>
-                    <select class="form-control" id="rn">
-                      <option value="rn1">ดิบ</option>
-                      <option value="rn2">เกือบดิบ</option>
-                      <option value="rn3">เกือบสุก</option>
-                      <option value="rn4">สุก</option>
-                    </select>
+                    <label for="f1">เจ้าหน้าที่ประเมิน</label>
+                    <input type="text" class="form-control" id="f1" placeholder="ชื่อ-นามสกุล" value="">
                   </div>
                   <div class="form-group mt-2">
-                    <label for="oc">Oil content</label>
-                    <input type="text" class="form-control" id="oc" placeholder="" value="15.05%">
+                    <label for="f3">ความสุกโดยเฉลี่ย</label>
+                    <input type="text" class="form-control" id="f3" placeholder="" value="สุก">
                   </div>
                   <div class="form-group mt-2">
-                    <label for="ur">Unripe ( % )</label>
-                    <input type="text" class="form-control" id="ur" placeholder="ปริมาณปาล์มดิบ">
+                    <label for="f4">ประมาณปริมาณน้ำมัน</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" aria-label="" id="f4" placeholder="" value="18.60">
+                      <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                      </div>
+                    </div>
                   </div>
                   <div class="form-group mt-2">
-                    <label for="sp">Small palm ( % )</label>
-                    <input type="text" class="form-control" id="sp" placeholder="ปริมาณปาล์มขนาดเล็ก">
+                    <label for="f2">คุณภาพปาล์ม</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" aria-label="" id="f2" placeholder="" value="">
+                      <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                      </div>
+                    </div>
                   </div>
                   <div class="form-group mt-2">
-                    <label for="ls">Long stem ( % )</label>
-                    <input type="text" class="form-control" id="ls" placeholder="ปริมาณปาล์มก้านยาว">
+                    <label for="f5">ปาล์มสุกไม่เต็มที่</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" aria-label="" id="f5"
+                        placeholder="ปริมาณปาล์มสุกไม่เต็มที่" value="">
+                      <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                      </div>
+                    </div>
                   </div>
                   <div class="form-group mt-2">
-                    <label for="im">Impurity ( % )</label>
-                    <input type="text" class="form-control" id="im" placeholder="ปริมาณสิ่งเจอปน">
+                    <label for="f6">ปาล์มเปียก</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" aria-label="" id="f6" placeholder="ปริมาณปาล์มเปียก"
+                        value="">
+                      <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                      </div>
+                    </div>
                   </div>
-
+                  <div class="form-group mt-2">
+                    <label for="f7">ปาล์มเล็ก</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" aria-label="" id="f7" placeholder="ปริมาณปาล์มเล็ก"
+                        value="">
+                      <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                      </div>
+                    </div>
+                  </div>
               </div>
+              <!-- 222222222222222222 -->
               <div class="col-lg">
-                <!-- ปาล์มเปียก -->
                 <div class="form-group">
-                  <label for="wp">Wet palm</label>
-                  <div id="wp">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="wp1" value="wp1">
-                      <label class="form-check-label" for="wp1">Wet</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="wp2" value="wp2">
-                      <label class="form-check-label" for="wp2">Little wet</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="wp3" value="wp3">
-                      <label class="form-check-label" for="wp3">Dry</label>
+                  <label for="f8">ปาล์มก้านยาว</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" aria-label="" id="f8" placeholder="ปริมาณปาล์มก้านยาว"
+                      value="">
+                    <div class="input-group-append">
+                      <span class="input-group-text">%</span>
                     </div>
                   </div>
                 </div>
-                <!-- ปาล์มเน่า -->
-                <div class="form-group mt-3">
-                  <label for="rp">Rotten palm</label>
-                  <div id="rp">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rp1" value="rp1">
-                      <label class="form-check-label" for="rp1">Good</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rp2" value="rp2">
-                      <label class="form-check-label" for="rp2">Neutral</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rp3" value="rp3">
-                      <label class="form-check-label" for="rp3">Bad</label>
+                <div class="form-group mt-2">
+                  <label for="f9">สิ่งเจือปน</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" aria-label="" id="f9" placeholder="ปริมาณสิ่งเจือปน"
+                      value="">
+                    <div class="input-group-append">
+                      <span class="input-group-text">%</span>
                     </div>
                   </div>
                 </div>
-                <!-- ปาล์มร่วง -->
-                <div class="form-group mt-3">
-                  <label for="fp">Fallen palm</label>
-                  <div id="fp">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="fp1" value="fp1">
-                      <label class="form-check-label" for="fp1">Lots</label>
+                <div class="form-group mt-2">
+                  <label for="i1">ปาล์มเน่า</label>
+                  <form action="" id="i1">
+                    <div class="radioinput mt-2" style="display: flex; justify-content: space-between;">
+                      <div class="form-check form-check-inline col">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="i11" value="option1">
+                        <label class="form-check-label" for="i11">ดี</label>
+                      </div>
+                      <div class="form-check form-check-inline col">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="i12" value="option2">
+                        <label class="form-check-label" for="i12">ปานกลาง</label>
+                      </div>
+                      <div class="form-check form-check-inline col">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="i13" value="option3">
+                        <label class="form-check-label" for="i13">ไม่ดี</label>
+                      </div>
                     </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="fp2" value="fp2">
-                      <label class="form-check-label" for="fp2">Little</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="fp3" value="fp3">
-                      <label class="form-check-label" for="fp3">None</label>
-                    </div>
-                  </div>
+                  </form>
                 </div>
-                <!-- บันทึกการคืนปาล์ม -->
-                <div class="form-group mt-4">
-                  <label for="rt">Palm return note</label>
-                  <textarea class="form-control" id="rt" rows="7"></textarea>
+                <div class="form-group mt-2">
+                  <label for="i2">ปาล์มร่วงปน</label>
+                  <form action="" id="i2">
+                    <div class="radioinput mt-2" style="display: flex; justify-content: space-between;">
+                      <div class="form-check form-check-inline col">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="i21" value="option1">
+                        <label class="form-check-label" for="i21">มาก</label>
+                      </div>
+                      <div class="form-check form-check-inline col">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="i22" value="option2">
+                        <label class="form-check-label" for="i22">น้อย</label>
+                      </div>
+                      <div class="form-check form-check-inline col">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="i23" value="option3">
+                        <label class="form-check-label" for="i23">ไม่มี</label>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="form-group mt-2">
+                  <label for="Textarea1">บันทึกการคืนปาล์ม</label>
+                  <textarea class="form-control mt-2" id="Textarea1" rows="7"
+                    placeholder="ระบุจำนวนปาล์มที่ส่งคืนให้ผู้ขาย"></textarea>
                 </div>
               </div>
               </form>
+              <!-- 333333333333333 -->
               <div class="col-lg" style="margin-top: auto; margin-bottom: auto;">
                 <center>
                   <div class="managereport mt-3" style="padding-top: 10%; padding-bottom: 10%;">
-                    <h5 class="mb-2">Manage report</h5>
+                    <h5 class="mb-2">What you want to do with Purchase form?</h5>
                     <a href="" class="btn btn-primary mt-4 me-lg-3"><img src="img/save.png" alt="" style="width: 20px;"
                         class="me-2">Save to database</a>
                     <a href="" class="btn btn-outline-primary mt-4"><img src="img/download.png" alt=""
@@ -272,7 +306,7 @@
           <button class="nav-link" id="pills-input-tab" data-bs-toggle="pill" data-bs-target="#pills-input"
             type="button" role="tab" aria-controls="pills-input" aria-selected="false">Input</button>
         </li>
-<div class="tab-pane fade show " id="pills-pass" role="tabpanel" aria-labelledby="pills-pass-tab">
+        <div class="tab-pane fade show " id="pills-pass" role="tabpanel" aria-labelledby="pills-pass-tab">
           <div class=" col-12 col-lg-6 p-lg-5 centerver">
             <div class="form-group mt-2">
               <label for="ur">Password</label>
