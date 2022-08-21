@@ -1,0 +1,409 @@
+<?php 
+    session_start();
+    $conn = mysqli_connect("localhost","root","","palmoil");
+
+    if(isset($_POST['insert'])){
+      $uname = $_POST['uname'];
+      $avg_level = $_POST['avg_level'];
+      $oil_content = $_POST['oil_content'];
+      $palm_quality = $_POST['palm_quality'];
+      $not_fully_ripe = $_POST['not_fully_ripe'];
+      $wet = $_POST['wet'];
+      $small = $_POST['small'];
+      $long_stem = $_POST['long_stem'];
+      $impurity = $_POST['impurity'];
+      $rotten = $_POST['rotten'];
+      $fall = $_POST['fall'];
+      $return_record = $_POST['return_record'];
+
+      $query = "INSERT INTO purchase(uname, avg_level, oil_content, palm_quality, not_fully_ripe, wet, small, long_stem, impurity, rotten, fall, return_record) VALUES('$uname','$avg_level','$oil_content','$palm_quality','$not_fully_ripe','$wet','$small','$long_stem','$impurity','$rotten','$fall','$return_record')";
+
+        $query_run = mysqli_query($conn, $query);
+
+      /*   $sql = $db->prepare("INSERT INTO purchase(uname, avg_level, oil_content, palm_quality, not_fully_ripe, wet, small, impurity, rotten, fall, return_record) 
+        VALUES(:uname,:avg_level,:oil_content,:palm_quality,:not_fully_ripe,:wet,:small,:impurity,:rotten,:fall,:return_record");
+        $sql->bindParam(":uname", $uname);
+        $sql->bindParam(":avg_level", $avg_level);
+        $sql->bindParam(":oil_content", $oil_content);
+        $sql->bindParam(":palm_quality", $palm_quality);
+        $sql->bindParam(":not_fully_ripe", $not_fully_ripe);
+        $sql->bindParam(":wet", $wet);
+        $sql->bindParam(":small", $small);
+        $sql->bindParam(":impurity", $impurity);
+        $sql->bindParam(":rotten", $rotten);
+        $sql->bindParam(":fall", $fall);
+        $sql->bindParam(":return_record", $return_record);
+        $sql->execute(); */
+
+        if ($query_run) {
+            $_SESSION['success'] = "Data has been inserted successfully";
+        } else {
+            $_SESSION['error'] = "Data has not been inserted successfully";
+        }
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palmy</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container-fluid ">
+    <div class="container-fluid shadow">
+      <div class="container ">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
+          <a class="navbar-brand" href="index.php" style="font-size: 28px;"><img src="img/palmy logo.png" alt=""
+            style="width: 140px;" class="me-3"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item active me-2">
+                <a class="nav-link" href="index.php">Home </a>
+              </li>
+              <li class="nav-item me-2">
+                <a class="nav-link" href="index.php #howto">How to use</a>
+              </li>
+              <li class="nav-item" style="margin-right: 0;">
+                <button type="button" class="btn btn-outline-primary"><a href="adminLogin.php"
+                    class="text-decoration-none">For admin</a> </button>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <center>
+      <div class="d-flex justify-content-center mt-4">
+      <input id="image-btn" type="file" hidden />
+      <button onclick="imageBtnActive()" id="custom1-btn" style="margin: 20px 0px;width: 13%;display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;"><i class="fa-solid fa-arrow-up-from-bracket"></i> อัพโหลดรูปภาพ</button>
+      </div>
+
+      <script>
+        const imageBtn = document.querySelector("#image-btn");
+        const customBtn1 = document.querySelector("#custom1-btn");
+        function imageBtnActive(){
+          imageBtn.click();
+        }
+
+      </script>
+    </center>
+    <div class="container p-4 shadow mt-4">
+      <ul class="nav nav-pills" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-result-tab" data-bs-toggle="pill" data-bs-target="#pills-result"
+            type="button" role="tab" aria-controls="pills-result" aria-selected="true">Analysis results
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button"
+            role="tab" aria-controls="pills-form" aria-selected="false">Purchase form</button>
+        </li>
+
+      </ul>
+
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-result" role="tabpanel" aria-labelledby="pills-result-tab">
+          <!-- Show in result tap -->
+          <div class="col-lg-6 col-12 mt-4">
+            <img src="img/S__16187531.png" class="img-fluid" alt="Responsive image">
+          </div>
+          <div class="col-12 col-lg-6 centerver">
+            <div class="">
+              <h4 class="texttopmarginresult">Analysis results details</h4>
+              <div class="mt-4 centerver">
+                <div class="row">
+                  <div class="col releft">
+                    <p>ทะลายสุก</p>
+                  </div>
+                  <div class="col">
+                    <p><b>6</b></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col releft">
+                    <p>ทะลายเกือบสุก</p>
+                  </div>
+                  <div class="col">
+                    <p><b>4</b></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col releft">
+                    <p>ทะลายเกือบดิบ</p>
+                  </div>
+                  <div class="col">
+                    <p><b>1</b></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col releft">
+                    <p>ทะลาบดิบ</p>
+                  </div>
+                  <div class="col">
+                    <p><b>4</b></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center mt-4">
+              <a href="#" class="btn btn-outline-primary"><img src="img/contact-form.png" alt="" style="width: 20px;"
+                  class="me-2">Fill purchase form</a>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
+          <!-- Show in form tap -->
+          <div class="container">
+            <div class="row mt-4">
+              <!-- 11111111111111111111 -->
+              <div class="col-lg">
+                <form action="" method="post">
+                  <div class="form-group">
+                    <label for="uname">ชื่อเจ้าของปาล์ม</label>
+                    <input type="text" class="form-control" name="uname" placeholder="ชื่อ-นามสกุล">
+                  </div>
+                  <div class="form-group mt-2">
+                    <label for="avg_level">ความสุกโดยเฉลี่ย</label>
+                    <input type="text" class="form-control" name="avg_level" placeholder="">
+                  </div>
+                  <div class="form-group mt-2">
+                    <label for="oil_content">ประมาณปริมาณน้ำมัน</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" name="oil_content" placeholder="">
+                      <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mt-2">
+                    <label for="palm_quality">คุณภาพปาล์ม</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" name="palm_quality" placeholder="">
+                      <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mt-2">
+                    <label for="not_fully_ripe">ปาล์มสุกไม่เต็มที่</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" name="not_fully_ripe" placeholder="ปริมาณปาล์มสุกไม่เต็มที่">
+                      <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mt-2">
+                    <label for="wet">ปาล์มเปียก</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" name="wet" placeholder="ปริมาณปาล์มเปียก">
+                      <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mt-2">
+                    <label for="small">ปาล์มเล็ก</label>
+                    <div class="input-group">
+                      <input type="text" name="small" class="form-control" placeholder="ปริมาณปาล์มเล็ก">
+                      <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <!-- 222222222222222222 -->
+              <div class="col-lg">
+                <div class="form-group">
+                  <label for="long_stem">ปาล์มก้านยาว</label>
+                  <div class="input-group">
+                    <input type="text" name="long_stem" class="form-control"  placeholder="ปริมาณปาล์มก้านยาว">
+                    <div class="input-group-append">
+                      <span class="input-group-text">%</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group mt-2">
+                  <label for="impurity">สิ่งเจือปน</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" name="impurity" placeholder="ปริมาณสิ่งเจือปน">
+                    <div class="input-group-append">
+                      <span class="input-group-text">%</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group mt-2">
+                  <label >ปาล์มเน่า</label>
+                    <div class="radioinput mt-2" style="display: flex; justify-content: space-between;">
+                      <div class="form-check form-check-inline col">
+                        <input class="form-check-input" type="radio" name="rotten" value="ดี">
+                        <label class="form-check-label">ดี</label>
+                      </div>
+                      <div class="form-check form-check-inline col">
+                        <input class="form-check-input" type="radio" name="rotten" value="ปานกลาง">
+                        <label class="form-check-label">ปานกลาง</label>
+                      </div>
+                      <div class="form-check form-check-inline col">
+                        <input class="form-check-input" type="radio" name="rotten" value="ไม่ดี">
+                        <label class="form-check-label">ไม่ดี</label>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group mt-2">
+                  <label>ปาล์มร่วงปน</label>
+                    <div class="radioinput mt-2" style="display: flex; justify-content: space-between;">
+                      <div class="form-check form-check-inline col">
+                        <input class="form-check-input" type="radio" name="fall" value="มาก">
+                        <label class="form-check-label" >มาก</label>
+                      </div>
+                      <div class="form-check form-check-inline col">
+                        <input class="form-check-input" type="radio" name="fall" value="น้อย">
+                        <label class="form-check-label" >น้อย</label>
+                      </div>
+                      <div class="form-check form-check-inline col">
+                        <input class="form-check-input" type="radio" name="fall" value="ไม่มี">
+                        <label class="form-check-label">ไม่มี</label>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group mt-2">
+                  <label >บันทึกการคืนปาล์ม</label>
+                  <textarea class="form-control mt-2" name="return_record" rows="7"
+                    placeholder="ระบุจำนวนปาล์มที่ส่งคืนให้ผู้ขาย"></textarea>
+                </div>
+              </div>
+              <center>
+                  <div class="managereport" style="padding-top: 10%; padding-bottom: 10%;">
+                    <h5 class="mb-2">What you want to do with Purchase form?</h5>
+                   <!--  insert -->
+                    <button type="submit" name="insert" class="btn btn-primary mt-4 me-lg-3" data-bs-toggle="modal"><img src="img/save.png" style="width: 20px;"
+                        class="me-2">Save to database</button>
+                       <!--  ดาวโหลด PDF -->
+                    <a href="" class="btn btn-outline-primary mt-4"><img src="img/download.png"
+                        style="width: 20px;" class="me-2">Download as PDF</a>
+                  </div>
+                </center>
+              </form>
+              <!-- 333333333333333 -->
+              <div class="col-lg" style="margin-top: auto; margin-bottom: auto;">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid bg-dark pt-2 mt-2">
+      <div class="container">
+        <footer class="text-center text-white">
+          <div class="container p-4">
+            <section class="mb-4">
+              <button type="button" class="btn btn-outline-light ">
+                <img src="img/world (2).png" alt="" style="width: 20px;" class="me-2">English<img src="img/next.png"
+                  alt="" style="width: 20px;" class="">
+              </button>
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <img src="img/facebook-app-symbol.png" alt="" style="width: 20px;" class="">
+              </a>
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <img src="img/twitter.png" alt="" style="width: 20px;" class="">
+              </a>
+            </section>
+            <section class="mb-2">
+              <p>
+                We are expecting to obtain a system for assessing oil palm bunch ripeness and oil content by image
+                processing in a web application form.
+              </p>
+            </section>
+          </div>
+        </footer>
+      </div>
+      <div class="container_fluid" style="background-color: rgba(0, 0, 0, 0.2);">
+        <div class="container">
+          <div class="text-center p-3">
+            <h5 style="color: white;">
+              <img src="img/โลโก้bw.png" alt="" style="width: 20px;" class="">
+              PALMY by PSU-Surat
+            </h5>
+            <p class="text-white">© 2020 Copyright: <a class="text-white" href="https://www.psu.ac.th/">psu.ac.th</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<!-- <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-input-tab" data-bs-toggle="pill" data-bs-target="#pills-input"
+            type="button" role="tab" aria-controls="pills-input" aria-selected="false">Input</button>
+        </li>
+        <div class="tab-pane fade show " id="pills-pass" role="tabpanel" aria-labelledby="pills-pass-tab">
+          <div class=" col-12 col-lg-6 p-lg-5 centerver">
+            <div class="form-group mt-2">
+              <label for="ur">Password</label>
+              <input type="text" class="form-control" id="ur" placeholder="กรอกรหัสผ่าน admin">
+            </div>
+            <div class="d-flex justify-content-center" style="margin: 5%;">
+              <a class="btn btn-primary">Confirm</a>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade show" id="pills-input" role="tabpanel" aria-labelledby="pills-input-tab">
+          <div class="col-lg-6 col-12 mt-4"><img src="img/IMG_4553.JPG" class="img-fluid" alt="Responsive image">
+          </div>
+
+          <div class=" col-12 col-lg-6 p-lg-5 centerver">
+            <div class="d-flex justify-content-center" style="margin: 8%;">
+              <a href="#" class="btn btn-primary"><img src="img/upload (1).png" alt="" style="width: 20px;"
+                  class="me-2">Upload Image</a>
+            </div>
+
+            <div class="bartext1 d-flex justify-content-between">
+
+              <p>Ripeness</p>
+              <p class="text-right">ดิบ</p>
+            </div>
+            <div class="progress" style="height: 25px;">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 25%; background-color:#000000;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                ดิบ</div>
+              <div class="progress-bar" role="progressbar" style="width: 25%; background-color:#3e0001;"
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">เกือบดิบ</div>
+              <div class="progress-bar" role="progressbar" style="width: 25%; background-color:#7c0000;"
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">เกือบสุก</div>
+              <div class="progress-bar" role="progressbar" style="width: 25%; background-color:#ba0001;"
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">สุก</div>
+            </div>
+            <div class="bartext2 d-flex justify-content-between mt-2">
+              <p>Oil content</p>
+              <p class="text-right">15.05%</p>
+            </div>
+            <div class="progress" style="height: 25px;">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 15.05%;" aria-valuenow="15.05" aria-valuemin="0" aria-valuemax="100">15.05%</div>
+            </div>
+            <center>
+              <button type="button" class="btn btn-outline-primary mt-3">Add</button>
+              <button type="button" class="btn btn-outline-primary mt-3">Update</button>
+              <button type="button" class="btn btn-outline-primary mt-3">Delete</button>
+            </center>
+
+          </div>
+        </div> -->
