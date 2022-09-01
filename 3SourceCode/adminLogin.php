@@ -52,7 +52,7 @@
             
                         <div class="text-center pt-1 mb-5 pb-1">
                             <button style="width: 120px;" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-                                type="submit"  ><a href="login.php " style="color: white; text-decoration: none; ">Login</a></button>
+                                type="submit"  ><a href="adminDashboard.php " style="color: white; text-decoration: none; ">Login</a></button>
                         </div>
                     </form> 
                 </div>

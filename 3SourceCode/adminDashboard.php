@@ -4,9 +4,9 @@
 
     //ตรวจสอบการ login
 
-    if (!isset($_SESSION['is_logged_in'])) {
+    /* if (!isset($_SESSION['is_logged_in'])) {
         header('location : login.php');
-    }
+    } */
 
     //ส่วนในการ Update ข้อมูล
     if (isset($_REQUEST['update_id'])) {
