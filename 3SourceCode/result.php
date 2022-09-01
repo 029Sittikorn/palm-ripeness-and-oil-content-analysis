@@ -1,46 +1,46 @@
 <?php 
-    session_start();
-    $conn = mysqli_connect("localhost","root","","palmoil");
+    // session_start();
+    // $conn = mysqli_connect("localhost","root","","palmoil");
 
-    if(isset($_POST['insert'])){
-      $uname = $_POST['uname'];
-      $avg_level = $_POST['avg_level'];
-      $oil_content = $_POST['oil_content'];
-      $palm_quality = $_POST['palm_quality'];
-      $not_fully_ripe = $_POST['not_fully_ripe'];
-      $wet = $_POST['wet'];
-      $small = $_POST['small'];
-      $long_stem = $_POST['long_stem'];
-      $impurity = $_POST['impurity'];
-      $rotten = $_POST['rotten'];
-      $fall = $_POST['fall'];
-      $return_record = $_POST['return_record'];
+    // if(isset($_POST['insert'])){
+    //   $uname = $_POST['uname'];
+    //   $avg_level = $_POST['avg_level'];
+    //   $oil_content = $_POST['oil_content'];
+    //   $palm_quality = $_POST['palm_quality'];
+    //   $not_fully_ripe = $_POST['not_fully_ripe'];
+    //   $wet = $_POST['wet'];
+    //   $small = $_POST['small'];
+    //   $long_stem = $_POST['long_stem'];
+    //   $impurity = $_POST['impurity'];
+    //   $rotten = $_POST['rotten'];
+    //   $fall = $_POST['fall'];
+    //   $return_record = $_POST['return_record'];
 
-      $query = "INSERT INTO purchase(uname, avg_level, oil_content, palm_quality, not_fully_ripe, wet, small, long_stem, impurity, rotten, fall, return_record) VALUES('$uname','$avg_level','$oil_content','$palm_quality','$not_fully_ripe','$wet','$small','$long_stem','$impurity','$rotten','$fall','$return_record')";
+    //   $query = "INSERT INTO purchase(uname, avg_level, oil_content, palm_quality, not_fully_ripe, wet, small, long_stem, impurity, rotten, fall, return_record) VALUES('$uname','$avg_level','$oil_content','$palm_quality','$not_fully_ripe','$wet','$small','$long_stem','$impurity','$rotten','$fall','$return_record')";
 
-        $query_run = mysqli_query($conn, $query);
+    //     $query_run = mysqli_query($conn, $query);
 
-      /*   $sql = $db->prepare("INSERT INTO purchase(uname, avg_level, oil_content, palm_quality, not_fully_ripe, wet, small, impurity, rotten, fall, return_record) 
-        VALUES(:uname,:avg_level,:oil_content,:palm_quality,:not_fully_ripe,:wet,:small,:impurity,:rotten,:fall,:return_record");
-        $sql->bindParam(":uname", $uname);
-        $sql->bindParam(":avg_level", $avg_level);
-        $sql->bindParam(":oil_content", $oil_content);
-        $sql->bindParam(":palm_quality", $palm_quality);
-        $sql->bindParam(":not_fully_ripe", $not_fully_ripe);
-        $sql->bindParam(":wet", $wet);
-        $sql->bindParam(":small", $small);
-        $sql->bindParam(":impurity", $impurity);
-        $sql->bindParam(":rotten", $rotten);
-        $sql->bindParam(":fall", $fall);
-        $sql->bindParam(":return_record", $return_record);
-        $sql->execute(); */
+    //   /*   $sql = $db->prepare("INSERT INTO purchase(uname, avg_level, oil_content, palm_quality, not_fully_ripe, wet, small, impurity, rotten, fall, return_record) 
+    //     VALUES(:uname,:avg_level,:oil_content,:palm_quality,:not_fully_ripe,:wet,:small,:impurity,:rotten,:fall,:return_record");
+    //     $sql->bindParam(":uname", $uname);
+    //     $sql->bindParam(":avg_level", $avg_level);
+    //     $sql->bindParam(":oil_content", $oil_content);
+    //     $sql->bindParam(":palm_quality", $palm_quality);
+    //     $sql->bindParam(":not_fully_ripe", $not_fully_ripe);
+    //     $sql->bindParam(":wet", $wet);
+    //     $sql->bindParam(":small", $small);
+    //     $sql->bindParam(":impurity", $impurity);
+    //     $sql->bindParam(":rotten", $rotten);
+    //     $sql->bindParam(":fall", $fall);
+    //     $sql->bindParam(":return_record", $return_record);
+    //     $sql->execute(); */
 
-        if ($query_run) {
-            $_SESSION['success'] = "Data has been inserted successfully";
-        } else {
-            $_SESSION['error'] = "Data has not been inserted successfully";
-        }
-    }
+    //     if ($query_run) {
+    //         $_SESSION['success'] = "Data has been inserted successfully";
+    //     } else {
+    //         $_SESSION['error'] = "Data has not been inserted successfully";
+    //     }
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,7 +90,7 @@
     <center>
       <div class="d-flex justify-content-center mt-4">
       <input id="image-btn" type="file" hidden />
-      <button onclick="imageBtnActive()" id="custom1-btn" style="margin: 20px 0px;width: 13%;display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;"><i class="fa-solid fa-arrow-up-from-bracket"></i> อัพโหลดรูปภาพ</button>
+      <button onclick="imageBtnActive()" id="custom1-btn" style="margin: 20px 0px;width: 170px; display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;"><i class="fa-solid fa-arrow-up-from-bracket"></i> อัพโหลดรูปภาพ</button>
       </div>
 
       <script>
@@ -99,10 +99,9 @@
         function imageBtnActive(){
           imageBtn.click();
         }
-
       </script>
     </center>
-    <div class="container p-4 shadow mt-4">
+    <div class="container p-4 shadow mt-4" style="background-image: url('img/พื้นหลังปาล์ม.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-position: center top; background-size: cover;">
       <ul class="nav nav-pills" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="pills-result-tab" data-bs-toggle="pill" data-bs-target="#pills-result"
@@ -116,13 +115,13 @@
 
       </ul>
 
-      <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-result" role="tabpanel" aria-labelledby="pills-result-tab">
+      <div class="tab-content" id="pills-tabContent" >
+        <div class="tab-pane fade show active mt-4 mb-4" id="pills-result" role="tabpanel" aria-labelledby="pills-result-tab" style="max-width: 1110px;  margin-left: auto; margin-right: auto;">
           <!-- Show in result tap -->
-          <div class="col-lg-6 col-12 mt-4">
+          <div class="col-lg-6 col-12 ">
             <img src="img/S__16187531.png" class="img-fluid" alt="Responsive image">
           </div>
-          <div class="col-12 col-lg-6 centerver">
+          <div class="col-lg-6 col-12  centerver">
             <div class="">
               <h4 class="texttopmarginresult">Analysis results details</h4>
               <div class="mt-4 centerver">
@@ -168,21 +167,22 @@
         </div>
         <div class="tab-pane fade" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
           <!-- Show in form tap -->
-          <div class="container">
+          <div class="container" style="max-width: 400px;">
             <div class="row mt-4">
               <!-- 11111111111111111111 -->
               <div class="col-lg">
                 <form action="" method="post">
                   <div class="form-group">
                     <label for="uname">ชื่อเจ้าของปาล์ม</label>
-                    <input type="text" class="form-control" name="uname" placeholder="ชื่อ-นามสกุล">
+                    <input type="text" class="form-control" name="uname" placeholder="">
                   </div>
-                  <div class="form-group mt-2">
+                  <div class="row">
+                    <div class="form-group mt-2 col-6">
                     <label for="avg_level">ความสุกโดยเฉลี่ย</label>
                     <input type="text" class="form-control" name="avg_level" placeholder="">
                   </div>
-                  <div class="form-group mt-2">
-                    <label for="oil_content">ประมาณปริมาณน้ำมัน</label>
+                  <div class="form-group mt-2 col-6">
+                    <label for="oil_content">ปริมาณน้ำมัน</label>
                     <div class="input-group">
                       <input type="text" class="form-control" name="oil_content" placeholder="">
                       <div class="input-group-append">
@@ -190,7 +190,9 @@
                       </div>
                     </div>
                   </div>
-                  <div class="form-group mt-2">
+                  </div>
+                  <div class="row">
+                    <div class="form-group mt-2 col-6">
                     <label for="palm_quality">คุณภาพปาล์ม</label>
                     <div class="input-group">
                       <input type="text" class="form-control" name="palm_quality" placeholder="">
@@ -199,94 +201,82 @@
                       </div>
                     </div>
                   </div>
-                  <div class="form-group mt-2">
+                  <div class="form-group mt-2 col-6">
                     <label for="not_fully_ripe">ปาล์มสุกไม่เต็มที่</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" name="not_fully_ripe" placeholder="ปริมาณปาล์มสุกไม่เต็มที่">
+                      <input type="text" class="form-control" name="not_fully_ripe" placeholder="">
                       <div class="input-group-append">
                         <span class="input-group-text">%</span>
                       </div>
                     </div>
                   </div>
-                  <div class="form-group mt-2">
+                  </div>
+                  <div class="row">
+                    <div class="form-group mt-2 col-6">
                     <label for="wet">ปาล์มเปียก</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" name="wet" placeholder="ปริมาณปาล์มเปียก">
+                      <input type="text" class="form-control" name="wet" placeholder="">
                       <div class="input-group-append">
                         <span class="input-group-text">%</span>
                       </div>
                     </div>
                   </div>
-                  <div class="form-group mt-2">
+                  <div class="form-group mt-2 col-6">
                     <label for="small">ปาล์มเล็ก</label>
                     <div class="input-group">
-                      <input type="text" name="small" class="form-control" placeholder="ปริมาณปาล์มเล็ก">
+                      <input type="text" name="small" class="form-control" placeholder="">
                       <div class="input-group-append">
                         <span class="input-group-text">%</span>
                       </div>
                     </div>
                   </div>
-              </div>
-              <!-- 222222222222222222 -->
-              <div class="col-lg">
-                <div class="form-group">
+                  </div>
+                <div class="row">
+                  <div class="form-group mt-2 col-6">
                   <label for="long_stem">ปาล์มก้านยาว</label>
                   <div class="input-group">
-                    <input type="text" name="long_stem" class="form-control"  placeholder="ปริมาณปาล์มก้านยาว">
+                    <input type="text" name="long_stem" class="form-control"  placeholder="">
                     <div class="input-group-append">
                       <span class="input-group-text">%</span>
                     </div>
                   </div>
                 </div>
-                <div class="form-group mt-2">
+                <div class="form-group mt-2 col-6">
                   <label for="impurity">สิ่งเจือปน</label>
                   <div class="input-group">
-                    <input type="text" class="form-control" name="impurity" placeholder="ปริมาณสิ่งเจือปน">
+                    <input type="text" class="form-control" name="impurity" placeholder="">
                     <div class="input-group-append">
                       <span class="input-group-text">%</span>
                     </div>
                   </div>
                 </div>
-                <div class="form-group mt-2">
-                  <label >ปาล์มเน่า</label>
-                    <div class="radioinput mt-2" style="display: flex; justify-content: space-between;">
-                      <div class="form-check form-check-inline col">
-                        <input class="form-check-input" type="radio" name="rotten" value="ดี">
-                        <label class="form-check-label">ดี</label>
-                      </div>
-                      <div class="form-check form-check-inline col">
-                        <input class="form-check-input" type="radio" name="rotten" value="ปานกลาง">
-                        <label class="form-check-label">ปานกลาง</label>
-                      </div>
-                      <div class="form-check form-check-inline col">
-                        <input class="form-check-input" type="radio" name="rotten" value="ไม่ดี">
-                        <label class="form-check-label">ไม่ดี</label>
-                      </div>
-                    </div>
+                </div>
+                <div class="row">
+                  <div class="form-group mt-2 col-6">
+                    <label for="rotten">ปาล์มเน่า</label>
+                      <select name="rotten" id="rotten" class="form-control">
+                        <option value="" disabled selected>เลือกระดับ⠀⠀⠀⠀⠀⠀▼</option>
+                        <option value="ดี">ดี</option>
+                        <option value="ปานกลาง">ปานกลาง</option>
+                        <option value="ไม่ดี">ไม่ดี</option>
+                      </select>
+                  </div>
+                  <div class="form-group mt-2 col-6">
+                    <label for="fall">ปาล์มร่วงปน</label>
+                        <select name="fall" id="fall" class="form-control">
+                          <option value="" disabled selected>เลือกระดับ⠀⠀⠀⠀⠀⠀▼</option>
+                          <option value="มาก">มาก</option>
+                          <option value="น้อย">น้อย</option>
+                          <option value="ไม่มี">ไม่มี</option>
+                        </select>
+                  </div>
                 </div>
                 <div class="form-group mt-2">
-                  <label>ปาล์มร่วงปน</label>
-                    <div class="radioinput mt-2" style="display: flex; justify-content: space-between;">
-                      <div class="form-check form-check-inline col">
-                        <input class="form-check-input" type="radio" name="fall" value="มาก">
-                        <label class="form-check-label" >มาก</label>
-                      </div>
-                      <div class="form-check form-check-inline col">
-                        <input class="form-check-input" type="radio" name="fall" value="น้อย">
-                        <label class="form-check-label" >น้อย</label>
-                      </div>
-                      <div class="form-check form-check-inline col">
-                        <input class="form-check-input" type="radio" name="fall" value="ไม่มี">
-                        <label class="form-check-label">ไม่มี</label>
-                      </div>
-                    </div>
-                </div>
-                <div class="form-group mt-2">
-                  <label >บันทึกการคืนปาล์ม</label>
-                  <textarea class="form-control mt-2" name="return_record" rows="7"
-                    placeholder="ระบุจำนวนปาล์มที่ส่งคืนให้ผู้ขาย"></textarea>
+                  <label for="return_record">บันทึกการคืนปาล์ม</label>
+                  <input type="text" class="form-control" name="return_record" placeholder="">
                 </div>
               </div>
+            
               <center>
                   <div class="managereport" style="padding-top: 10%; padding-bottom: 10%;">
                     <h5 class="mb-2">What you want to do with Purchase form?</h5>
@@ -299,16 +289,12 @@
                   </div>
                 </center>
               </form>
-              <!-- 333333333333333 -->
-              <div class="col-lg" style="margin-top: auto; margin-bottom: auto;">
-                
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="container-fluid bg-dark pt-2 mt-2">
+    <div class="container-fluid bg-dark pt-2 mt-5">
       <div class="container">
         <footer class="text-center text-white">
           <div class="container p-4">
