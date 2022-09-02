@@ -101,7 +101,7 @@
         }
       </script>
     </center>
-    <div class="container p-4 shadow mt-4" style="background-image: url('img/พื้นหลังปาล์ม.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-position: center top; background-size: cover;">
+    <div class="container p-4 shadow mt-4" style="background-image: url('img/Palm sunday greetings instagram stories.png'); background-repeat: no-repeat; background-position: center top; background-size: cover;">
       <ul class="nav nav-pills" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="pills-result-tab" data-bs-toggle="pill" data-bs-target="#pills-result"
@@ -118,12 +118,12 @@
       <div class="tab-content" id="pills-tabContent" >
         <div class="tab-pane fade show active mt-4 mb-4" id="pills-result" role="tabpanel" aria-labelledby="pills-result-tab" style="max-width: 1110px;  margin-left: auto; margin-right: auto;">
           <!-- Show in result tap -->
-          <div class="col-lg-6 col-12 ">
+          <div class="col-lg-6 col-12 rounded overflow-hidden">
             <img src="img/S__16187531.png" class="img-fluid" alt="Responsive image">
           </div>
-          <div class="col-lg-6 col-12  centerver">
+          <div class="col-lg-6 col-12 centerver shadow rounded" style="max-width: 550px; background-color: white;">
             <div class="">
-              <h4 class="texttopmarginresult">Analysis results details</h4>
+              <h4 class="texttopmarginresult mt-3">Analysis results details</h4>
               <div class="mt-4 centerver">
                 <div class="row">
                   <div class="col releft">
@@ -159,15 +159,15 @@
                 </div>
               </div>
             </div>
-            <div class="d-flex justify-content-center mt-4">
-              <a href="#" class="btn btn-outline-primary"><img src="img/contact-form.png" alt="" style="width: 20px;"
+            <div class="d-flex justify-content-center ">
+              <a href="#" class="btn btn-outline-primary mt-2 mb-4"><img src="img/contact-form.png" alt="" style="width: 20px;"
                   class="me-2">Fill purchase form</a>
             </div>
           </div>
         </div>
         <div class="tab-pane fade" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
           <!-- Show in form tap -->
-          <div class="container" style="max-width: 400px;">
+          <div class="container shadow p-3 rounded" style="max-width: 400px; background-color: white;">
             <div class="row mt-4">
               <!-- 11111111111111111111 -->
               <div class="col-lg">
@@ -275,19 +275,10 @@
                   <label for="return_record">บันทึกการคืนปาล์ม</label>
                   <input type="text" class="form-control" name="return_record" placeholder="">
                 </div>
+                <div class="form-group mt-4">
+                <button type="submit" name="insert" class="btn btn-primary me-lg-3 mb-4 form-control" data-bs-toggle="modal" style=""><img src="img/save.png" style="width: 20px;" class="me-2">Save to database</button>
+                </div>
               </div>
-            
-              <center>
-                  <div class="managereport" style="padding-top: 10%; padding-bottom: 10%;">
-                    <h5 class="mb-2">What you want to do with Purchase form?</h5>
-                   <!--  insert -->
-                    <button type="submit" name="insert" class="btn btn-primary mt-4 me-lg-3" data-bs-toggle="modal"><img src="img/save.png" style="width: 20px;"
-                        class="me-2">Save to database</button>
-                       <!--  ดาวโหลด PDF -->
-                    <a href="" class="btn btn-outline-primary mt-4"><img src="img/download.png"
-                        style="width: 20px;" class="me-2">Download as PDF</a>
-                  </div>
-                </center>
               </form>
             </div>
           </div>
