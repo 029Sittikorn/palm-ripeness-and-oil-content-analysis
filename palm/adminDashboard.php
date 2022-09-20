@@ -288,12 +288,13 @@ if (isset($_REQUEST['delete'])) {
 
                                 function deleteConfirm(userId) {
                                     Swal.fire({
-                                        title: "Are you sure?",
-                                        text: "It will be deleted permanently!",
+                                        title: "คุณต้องการลบใช่หรือไม่?",
+                                        text: "เมื่อทำการลบแล้ว ข้อมูลจะหายไปในทันที!",
                                         showCancelButton: true,
                                         confirmButtonColor: "#3085d6",
                                         cancelButtonColor: "#d33",
-                                        confirmButtonText: "Yes, Delete it!",
+                                        cancelButtonText : "ยกเลิก",
+                                        confirmButtonText: "ใช่, ต้องการลบข้อมูล!",
                                         showLoaderOnConfirm: true,
                                         preConfirm: function() {
                                             return new Promise(function(resolve) {
@@ -305,15 +306,15 @@ if (isset($_REQUEST['delete'])) {
                                                     .done(function() {
                                                         Swal.fire({
                                                             icon: 'suscess',
-                                                            title: 'success',
-                                                            text: 'Data deleted successfully'
+                                                            title: 'สำเร็จ',
+                                                            text: 'ทำการลบข้อมูลสำเร็จ!'
 
                                                         }).then(() => {
                                                             document.location.href = 'adminDashboard.php';
                                                         })
 
                                                     }).fail(function() {
-                                                        Swal.fire('Oops...', 'Something went wrong with ajax!', 'error');
+                                                        Swal.fire('เห้ย! แย่แล้ว', 'มีบางอย่างเกิดข้อผิดพลาด!', 'error');
                                                         window.location.reload();
                                                     })
                                             })

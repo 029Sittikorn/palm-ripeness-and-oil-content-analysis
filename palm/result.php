@@ -284,7 +284,7 @@ if (isset($_POST['insert'])) {
                     <div class="form-group mt-2 col-6">
                       <label for="rotten">ปาล์มเน่า</label>
                       <select name="rotten" id="rotten" class="form-control">
-                        <option value="" disabled selected>เลือกระดับ⠀⠀⠀⠀⠀⠀▼</option>
+                        <option value="">เลือกระดับ⠀⠀⠀⠀⠀⠀▼</option>
                         <option value="ดี">ดี</option>
                         <option value="ปานกลาง">ปานกลาง</option>
                         <option value="ไม่ดี">ไม่ดี</option>
@@ -293,7 +293,7 @@ if (isset($_POST['insert'])) {
                     <div class="form-group mt-2 col-6">
                       <label for="fall">ปาล์มร่วงปน</label>
                       <select name="fall" id="fall" class="form-control">
-                        <option value="" disabled selected>เลือกระดับ⠀⠀⠀⠀⠀⠀▼</option>
+                        <option value="">เลือกระดับ⠀⠀⠀⠀⠀⠀▼</option>
                         <option value="มาก">มาก</option>
                         <option value="น้อย">น้อย</option>
                         <option value="ไม่มี">ไม่มี</option>

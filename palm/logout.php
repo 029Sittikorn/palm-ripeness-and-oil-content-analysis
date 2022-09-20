@@ -12,8 +12,8 @@ echo '
       <script>
         setTimeout(function(){
           swal({
-            title : "Logout Successfully",
-            text : "See you later",
+            title : "ออกจากระบบสำเร็จ!",
+            text : "ระบบจะทำการย้อนกลับไปยังหน้าหลัก",
             type : "success"
           },function(){
             window.location = "index.php";

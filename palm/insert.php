@@ -21,10 +21,9 @@
         $fall = $_POST['fall'];
         $return_record = $_POST['return_record'];
 
-        /* $query = "INSERT INTO purchase(uname, avg_level, oil_content, palm_quality, not_fully_ripe, wet, small, long_stem, impurity, rotten, fall, return_record) VALUES('$uname','$avg_level','$oil_content','$palm_quality','$not_fully_ripe','$wet','$small','$long_stem','$impurity','$rotten','$fall','$return_record')";
-
-        $query_run = mysqli_query($conn, $query); */
-
+        if(empty($uname) || empty($avg_level) || empty($oil_content || empty($avg_level) || empty($oil_content) || empty($palm_quality) || empty($not_fully_ripe) || empty($wet) || empty($small)) || empty($impurity) || empty($rotten) || empty($fall) || empty($return_record)){
+            header('location: register.php');
+        }else{
         $sql = $db->prepare("INSERT INTO purchase (uname, avg_level, oil_content, palm_quality, not_fully_ripe, wet, small, impurity, rotten, fall, return_record) 
         VALUES(:uname,:avg_level,:oil_content,:palm_quality,:not_fully_ripe,:wet,:small,:impurity,:rotten,:fall,:return_record)");
         $sql->bindParam(':uname', $uname);
@@ -39,7 +38,7 @@
         $sql->bindParam(':fall', $fall);
         $sql->bindParam(':return_record', $return_record);
         $sql->execute(); 
-
+        }
         if ($sql) {
             $_SESSION['success'] = "Data has been inserted successfully";
             header('location : result.php');
