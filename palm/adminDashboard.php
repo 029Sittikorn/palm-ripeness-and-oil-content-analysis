@@ -37,6 +37,9 @@ if (isset($_REQUEST['delete'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -44,16 +47,18 @@ if (isset($_REQUEST['delete'])) {
         <div class="container-fluid shadow">
             <div class="container ">
                 <nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
-                    <a class="navbar-brand" href="#" style="font-size: 28px;"><img src="img/palmy logo admin.png" alt="" style="width: 140px;" class="me-3"></a>
+                <a class="navbar-brand mt-1" href="" style="font-size: 28px; font-family: 'Reem Kufi Fun', sans-serif; ">
+                    <img src="img/โลโก้.png" alt="" style="max-height: 50px; " class="me-3">OIL PALM RIPENESS ANALYZER
+                </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse " id="navbarNavDropdown">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item" style="margin-right: 30px;">
-                                <a href="register.php" class="text-decoration-none pe-4" style="color: gray;">เพิ่มสมาชิก</a>
-
-                                <a href="logout.php">Logout</a>
+                                <a href="register.php" class="text-decoration-none pe-4" style="color: gray;">Add User</a>
+                                <button type="button" class="btn btn-outline-primary"><a href="logout.php"
+                                    class="text-decoration-none">Logout</a> </button>
                             </li>
                         </ul>
                     </div>

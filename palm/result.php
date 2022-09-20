@@ -82,6 +82,9 @@ if (isset($_POST['insert'])) {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -90,18 +93,14 @@ if (isset($_POST['insert'])) {
       <div class="container ">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
-          <a class="navbar-brand" href="index.php" style="font-size: 28px;"><img src="img/palmy logo.png" alt="" style="width: 140px;" class="me-3"></a>
+          <a class="navbar-brand mt-1" href="index.php" style="font-size: 28px; font-family: 'Reem Kufi Fun', sans-serif; ">
+            <img src="img/โลโก้.png" alt="" style="max-height: 50px; " class="me-3">OIL PALM RIPENESS ANALYZER
+          </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse " id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
-              <li class="nav-item active me-2">
-                <a class="nav-link" href="index.php">Home </a>
-              </li>
-              <li class="nav-item me-2">
-                <a class="nav-link" href="index.php #howto">How to use</a>
-              </li>
               <li class="nav-item" style="margin-right: 0;">
                 <button type="button" class="btn btn-outline-primary"><a href="adminLogin.php" class="text-decoration-none">For admin</a> </button>
               </li>
