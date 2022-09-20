@@ -48,7 +48,8 @@ if (isset($_REQUEST['delete'])) {
             <div class="container ">
                 <nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
                 <a class="navbar-brand mt-1" href="" style="font-size: 28px; font-family: 'Reem Kufi Fun', sans-serif; ">
-                    <img src="img/โลโก้.png" alt="" style="max-height: 50px; " class="me-3">OIL PALM RIPENESS ANALYZER
+                    <img src="img/โลโก้.png" alt="" style="max-height: 50px; " class="me-3">
+                    <span class="d-none d-md-inline">OIL PALM RIPENESS ANALYZER</span>
                 </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -80,7 +81,7 @@ if (isset($_REQUEST['delete'])) {
                 <div class="tab-pane fade show active" id="pills-result" role="tabpanel" aria-labelledby="pills-result-tab">
                     <!-- Show in Manage knowledge base tap -->
                     <div class="mt-3 container" style="display: grid;height: 100%;place-items: center;text-align: center;">
-                        <div style=" height: 400px; width: 45%;">
+                        <div style="height: 400px; max-width: 600px;" class="imagePreview w-100">
                             <div style="position: relative; height: 350px;width: 100%;border: 2px dashed #0d6efd;border-radius: 10px;display: flex;align-items: center;justify-content: center;overflow: hidden;" class="wrapper mt-3 mb-3">
                                 <div style=" position: absolute;height: 100%; width: 100%;display: flex;align-items: center;justify-content: center;">
                                     <img style="width: 100%;height: 100%;object-fit: cover;" id="imagePreview">
@@ -91,11 +92,14 @@ if (isset($_REQUEST['delete'])) {
                                 </div>
 
                             </div>
-                            <input id="imageUpload" type="file" hidden />
-
-                            <button onclick="imageuploadActive()" id="custom-btn" style="margin: 20px 0px;width: 100%;display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;">Choose a file</button>
+                            
                         </div>
 
+                        <div style="max-width: 600px;" class="imagePreview w-100">
+                            <input id="imageUpload" type="file" hidden />
+                            <button onclick="imageuploadActive()" id="custom-btn" style="margin: 20px 0px;width: 100%;display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;">Choose a file</button>
+                        </div>
+                            
                         <script>
                             const imageupload = document.querySelector("#imageUpload");
                             const customBtn = document.querySelector("#custom-btn");
@@ -105,7 +109,7 @@ if (isset($_REQUEST['delete'])) {
                             }
                         </script>
 
-                        <div style="margin-top: 10px;" class="col-12 col-lg-5 p-lg-5 ">
+                        <div style="" class="col-12 col-lg-5 p-lg-5 ">
 
 
 
@@ -231,8 +235,8 @@ if (isset($_REQUEST['delete'])) {
                         <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
                             Purchase form table
                         </h3>
-                        <div class="container mt-3 text-center">
-                            <table class="table table-striped table-bordered table-hover">
+                        <div class="container mt-3 text-center table-responsive">
+                            <table class="table table-striped table-bordered ">
                                 <thead>
                                     <tr>
                                         <th>ชื่อเจ้าของปาล์ม</th>

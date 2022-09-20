@@ -94,7 +94,8 @@ if (isset($_POST['insert'])) {
 
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
           <a class="navbar-brand mt-1" href="index.php" style="font-size: 28px; font-family: 'Reem Kufi Fun', sans-serif; ">
-            <img src="img/โลโก้.png" alt="" style="max-height: 50px; " class="me-3">OIL PALM RIPENESS ANALYZER
+            <img src="img/โลโก้.png" alt="" style="max-height: 50px; " class="me-3">
+            <span class="d-none d-md-inline"> OIL PALM RIPENESS ANALYZER</span>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

@@ -50,7 +50,6 @@
             </div>
 
             <button type="submit" name="submit" class="btn login-btn-blue btn-block text-white">Login</button>
-
         </form>
     </div>
 
