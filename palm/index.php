@@ -23,7 +23,6 @@
   <div class="container-fluid ">
     <div class="container-fluid shadow">
       <div class="container ">
-        
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
           <a class="navbar-brand mt-1 " href="index.php" style="font-size: 28px; font-family: 'Reem Kufi Fun', sans-serif; ">
             <img src="img/โลโก้.png" alt="" style="max-height: 50px; " class="me-3 ">
@@ -58,9 +57,10 @@
                   </div>
                 </center> 
           </div>
-          <div class="col-lg-6 col-12 mt-5 mb-5 "><img src="img/Oil palm fruit ripness and Oil content analysis.png"
+          <div class="col-lg-6 col-12 mt-5 mb-5"><img data-tilt data-tilt-scale="1.1" src="img/Picture1.png"
               class="img-fluid" alt="Responsive image">
           </div>
+          <script src="vanilla-tilt.min.js"></script>
         </div>
       </div>
     </div>
