@@ -47,10 +47,10 @@ if (isset($_REQUEST['delete'])) {
         <div class="container-fluid shadow">
             <div class="container ">
                 <nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
-                <a class="navbar-brand mt-1" href="" style="font-size: 28px; font-family: 'Reem Kufi Fun', sans-serif; ">
-                    <img src="img/โลโก้.png" alt="" style="max-height: 50px; " class="me-3">
-                    <span class="d-none d-md-inline">OIL PALM RIPENESS ANALYZER</span>
-                </a>
+                    <a class="navbar-brand mt-1" href="" style="font-size: 28px; font-family: 'Reem Kufi Fun', sans-serif; ">
+                        <img src="img/โลโก้.png" alt="" style="max-height: 50px; " class="me-3">
+                        <span class="d-none d-md-inline">OIL PALM RIPENESS ANALYZER</span>
+                    </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -58,8 +58,7 @@ if (isset($_REQUEST['delete'])) {
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item" style="margin-right: 30px;">
                                 <a href="register.php" class="text-decoration-none pe-4" style="color: gray;">Add User</a>
-                                <button type="button" class="btn btn-outline-primary"><a href="logout.php"
-                                    class="text-decoration-none">Logout</a> </button>
+                                <button type="button" class="btn btn-outline-primary"><a href="logout.php" class="text-decoration-none">Logout</a> </button>
                             </li>
                         </ul>
                     </div>
@@ -69,16 +68,136 @@ if (isset($_REQUEST['delete'])) {
         <div class="container p-4 shadow  mt-4">
             <ul class="nav nav-pills" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-result-tab" data-bs-toggle="pill" data-bs-target="#pills-result" type="button" role="tab" aria-controls="pills-result" aria-selected="true">Manage knowledge base
+                    <button class="nav-link active" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button" role="tab" aria-controls="pills-form" aria-selected="false">Manage Purchase form
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button" role="tab" aria-controls="pills-form" aria-selected="false">Manage Purchase form
+                    <button class="nav-link " id="pills-result-tab" data-bs-toggle="pill" data-bs-target="#pills-result" type="button" role="tab" aria-controls="pills-result" aria-selected="true">Manage knowledge base
                     </button>
                 </li>
+
             </ul>
             <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-result" role="tabpanel" aria-labelledby="pills-result-tab">
+
+                <div class="tab-pane fade show active" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
+                    <!-- Show in Manage Purchase form tap -->
+                    <!-- Editable table -->
+                    <div class="card col-12 mt-4">
+                        <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
+                            Purchase form table
+                        </h3>
+                        <form name="frmSearch" action="" method="POST">
+                            <div class="ms-3 me-3">
+                                <div class="input-group mt-3 justify-content-end">
+                                    <div class="col-xs-4 me-2">
+                                        <input type="text" class="form-control" name="q" required value="<?php if (isset($_GET['q'])) { echo $_GET['q'];} ?>" placeholder="Search Data">
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" value="Search" style="background-color: #0d6efd; color : white;">Search</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="container mt-3 text-center table-responsive">
+                            <table class="table table-striped table-bordered ">
+                                <thead>
+                                    <tr>
+                                        <th>ชื่อเจ้าของปาล์ม</th>
+                                        <th>ความสุกโดยเฉลี่ย</th>
+                                        <th>ประมาณปริมาณน้ำมัน</th>
+                                        <th>คุณภาพปาล์ม</th>
+                                        <th>ปาล์มสุกไม่เต็มที่</th>
+                                        <th>ปาล์มเปียก</th>
+                                        <th>ปาล์มเล็ก</th>
+                                        <th>ปาล์มก้านยาว</th>
+                                        <th>สิ่งเจือปน</th>
+                                        <th>ปาล์มเน่า</th>
+                                        <th>ปาล์มร่วงปน</th>
+                                        <th>บันทึกการคืนปาล์ม</th>
+                                        <th>วันที่</th>
+                                        <th>แก้ไข</th>
+                                        <th>ลบ</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <?php
+                                    $select_stmt = $db->prepare("SELECT * FROM purchase ");
+                                    $select_stmt->execute();
+
+                                    while ($row = $select_stmt->fetch(PDO::FETCH_ASSOC)) {
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $row["uname"] ?></td>
+                                            <td><?php echo $row["avg_level"] ?></td>
+                                            <td><?php echo $row["oil_content"] ?></td>
+                                            <td><?php echo $row["palm_quality"] ?></td>
+                                            <td><?php echo $row["not_fully_ripe"] ?></td>
+                                            <td><?php echo $row["wet"] ?></td>
+                                            <td><?php echo $row["small"] ?></td>
+                                            <td><?php echo $row["long_stem"] ?></td>
+                                            <td><?php echo $row["impurity"] ?></td>
+                                            <td><?php echo $row["rotten"] ?></td>
+                                            <td><?php echo $row["fall"] ?></td>
+                                            <td><?php echo $row["return_record"] ?></td>
+                                            <td><?php echo $row["date"] ?></td>
+                                            <td><a href="edit.php?update_id=<?php echo $row["id"] ?>" class="btn btn-warning">Edit</a></td>
+
+                                            <td><a data-id="<?php echo $row["id"] ?>" href="?delete=<?php echo $row["id"] ?>" class="btn btn-danger delete-btn">Delete</a></td>
+                                        </tr>
+
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                            <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+                            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                            <script>
+                                $('.delete-btn').click(function(e) {
+                                    var userId = $(this).data('id');
+                                    e.preventDefault();
+                                    deleteConfirm(userId);
+                                })
+
+                                function deleteConfirm(userId) {
+                                    Swal.fire({
+                                        title: "คุณต้องการลบใช่หรือไม่?",
+                                        text: "เมื่อทำการลบแล้ว ข้อมูลจะหายไปในทันที!",
+                                        showCancelButton: true,
+                                        confirmButtonColor: "#3085d6",
+                                        cancelButtonColor: "#d33",
+                                        cancelButtonText: "ยกเลิก",
+                                        confirmButtonText: "ใช่, ต้องการลบข้อมูล!",
+                                        showLoaderOnConfirm: true,
+                                        preConfirm: function() {
+                                            return new Promise(function(resolve) {
+                                                $.ajax({
+                                                        url: 'adminDashboard.php',
+                                                        type: 'GET',
+                                                        data: 'delete=' + userId,
+                                                    })
+                                                    .done(function() {
+                                                        Swal.fire({
+                                                            icon: 'suscess',
+                                                            title: 'สำเร็จ',
+                                                            text: 'ทำการลบข้อมูลสำเร็จ!'
+
+                                                        }).then(() => {
+                                                            document.location.href = 'adminDashboard.php';
+                                                        })
+
+                                                    }).fail(function() {
+                                                        Swal.fire('เห้ย! แย่แล้ว', 'มีบางอย่างเกิดข้อผิดพลาด!', 'error');
+                                                        window.location.reload();
+                                                    })
+                                            })
+                                        }
+                                    })
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-result" role="tabpanel" aria-labelledby="pills-result-tab">
                     <!-- Show in Manage knowledge base tap -->
                     <div class="mt-3 container" style="display: grid;height: 100%;place-items: center;text-align: center;">
                         <div style="height: 400px; max-width: 600px;" class="imagePreview w-100">
@@ -92,14 +211,14 @@ if (isset($_REQUEST['delete'])) {
                                 </div>
 
                             </div>
-                            
+
                         </div>
 
                         <div style="max-width: 600px;" class="imagePreview w-100">
                             <input id="imageUpload" type="file" hidden />
                             <button onclick="imageuploadActive()" id="custom-btn" style="margin: 20px 0px;width: 100%;display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;">Choose a file</button>
                         </div>
-                            
+
                         <script>
                             const imageupload = document.querySelector("#imageUpload");
                             const customBtn = document.querySelector("#custom-btn");
@@ -109,7 +228,7 @@ if (isset($_REQUEST['delete'])) {
                             }
                         </script>
 
-                        <div style="" class="col-12 col-lg-5 p-lg-5 ">
+                        <div class="col-12 col-lg-5 p-lg-5 ">
 
 
 
@@ -149,12 +268,12 @@ if (isset($_REQUEST['delete'])) {
                                         labelContainer.appendChild(document.createElement('div'));
                                     }
                                 }
-/* 
-                                async function loop() {
-                                    webcam.update(); // update the webcam frame
-                                    await predict();
-                                    window.requestAnimationFrame(loop);
-                                } */
+                                /* 
+                                                                async function loop() {
+                                                                    webcam.update(); // update the webcam frame
+                                                                    await predict();
+                                                                    window.requestAnimationFrame(loop);
+                                                                } */
 
                                 async function predict() {
                                     // predict can take in an image, video or canvas html element
@@ -162,7 +281,7 @@ if (isset($_REQUEST['delete'])) {
                                     const prediction = await model.predict(image, false);
                                     for (let i = 0; i < maxPredictions; i++) {
                                         const classPrediction =
-                                        prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
+                                            prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
                                         labelContainer.childNodes[i].innerHTML = classPrediction;
                                     }
                                 }
@@ -217,7 +336,7 @@ if (isset($_REQUEST['delete'])) {
                                     <img src="img/thought.png" style="width: 20px; " class="me-2">Add to knowledgebase</button>
 
 
-                                    
+
 
                             </center>
 
@@ -227,112 +346,6 @@ if (isset($_REQUEST['delete'])) {
                         </div>
                     </div>
 
-                </div>
-                <div class="tab-pane fade" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
-                    <!-- Show in Manage Purchase form tap -->
-                    <!-- Editable table -->
-                    <div class="card col-12 mt-4">
-                        <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
-                            Purchase form table
-                        </h3>
-                        <div class="container mt-3 text-center table-responsive">
-                            <table class="table table-striped table-bordered ">
-                                <thead>
-                                    <tr>
-                                        <th>ชื่อเจ้าของปาล์ม</th>
-                                        <th>ความสุกโดยเฉลี่ย</th>
-                                        <th>ประมาณปริมาณน้ำมัน</th>
-                                        <th>คุณภาพปาล์ม</th>
-                                        <th>ปาล์มสุกไม่เต็มที่</th>
-                                        <th>ปาล์มเปียก</th>
-                                        <th>ปาล์มเล็ก</th>
-                                        <th>ปาล์มก้านยาว</th>
-                                        <th>สิ่งเจือปน</th>
-                                        <th>ปาล์มเน่า</th>
-                                        <th>ปาล์มร่วงปน</th>
-                                        <th>บันทึกการคืนปาล์ม</th>
-                                        <th>วันที่</th>
-                                        <th>แก้ไข</th>
-                                        <th>ลบ</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <?php
-                                    $select_stmt = $db->prepare("SELECT * FROM purchase");
-                                    $select_stmt->execute();
-
-                                    while ($row = $select_stmt->fetch(PDO::FETCH_ASSOC)) {
-                                    ?>
-                                        <tr>
-                                            <td><?php echo $row["uname"] ?></td>
-                                            <td><?php echo $row["avg_level"] ?></td>
-                                            <td><?php echo $row["oil_content"] ?></td>
-                                            <td><?php echo $row["palm_quality"] ?></td>
-                                            <td><?php echo $row["not_fully_ripe"] ?></td>
-                                            <td><?php echo $row["wet"] ?></td>
-                                            <td><?php echo $row["small"] ?></td>
-                                            <td><?php echo $row["long_stem"] ?></td>
-                                            <td><?php echo $row["impurity"] ?></td>
-                                            <td><?php echo $row["rotten"] ?></td>
-                                            <td><?php echo $row["fall"] ?></td>
-                                            <td><?php echo $row["return_record"] ?></td>
-                                            <td><?php echo $row["date"] ?></td>
-                                            <td><a href="edit.php?update_id=<?php echo $row["id"] ?>" class="btn btn-warning">Edit</a></td>
-
-                                            <td><a data-id="<?php echo $row["id"] ?>" href="?delete=<?php echo $row["id"] ?>" class="btn btn-danger delete-btn">Delete</a></td>
-                                        </tr>
-
-                                    <?php } ?>
-                                </tbody>
-                            </table>
-                            <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
-                            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                            <script>
-                                $('.delete-btn').click(function(e) {
-                                    var userId = $(this).data('id');
-                                    e.preventDefault();
-                                    deleteConfirm(userId);
-                                })
-
-                                function deleteConfirm(userId) {
-                                    Swal.fire({
-                                        title: "คุณต้องการลบใช่หรือไม่?",
-                                        text: "เมื่อทำการลบแล้ว ข้อมูลจะหายไปในทันที!",
-                                        showCancelButton: true,
-                                        confirmButtonColor: "#3085d6",
-                                        cancelButtonColor: "#d33",
-                                        cancelButtonText : "ยกเลิก",
-                                        confirmButtonText: "ใช่, ต้องการลบข้อมูล!",
-                                        showLoaderOnConfirm: true,
-                                        preConfirm: function() {
-                                            return new Promise(function(resolve) {
-                                                $.ajax({
-                                                        url: 'adminDashboard.php',
-                                                        type: 'GET',
-                                                        data: 'delete=' + userId,
-                                                    })
-                                                    .done(function() {
-                                                        Swal.fire({
-                                                            icon: 'suscess',
-                                                            title: 'สำเร็จ',
-                                                            text: 'ทำการลบข้อมูลสำเร็จ!'
-
-                                                        }).then(() => {
-                                                            document.location.href = 'adminDashboard.php';
-                                                        })
-
-                                                    }).fail(function() {
-                                                        Swal.fire('เห้ย! แย่แล้ว', 'มีบางอย่างเกิดข้อผิดพลาด!', 'error');
-                                                        window.location.reload();
-                                                    })
-                                            })
-                                        }
-                                    })
-                                }
-                            </script>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
