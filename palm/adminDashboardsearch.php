@@ -47,7 +47,7 @@ if (isset($_REQUEST['delete'])) {
         <div class="container-fluid shadow">
             <div class="container ">
                 <nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
-                    <a class="navbar-brand mt-1" href="" style="font-size: 28px; font-family: 'Reem Kufi Fun', sans-serif; ">
+                    <a class="navbar-brand mt-1" href="adminDashboard.php" style="font-size: 28px; font-family: 'Reem Kufi Fun', sans-serif; ">
                         <img src="img/โลโก้.png" alt="" style="max-height: 50px; " class="me-3">
                         <span class="d-none d-md-inline">OIL PALM RIPENESS ANALYZER</span>
                     </a>
@@ -86,23 +86,9 @@ if (isset($_REQUEST['delete'])) {
                         <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
                             Purchase form table
                         </h3>
-                            <center >
-                                <form action="adminDashboardsearch.php" method="post" style=" max-width: 350px;" class="">
-                                    <div class="form-group">
-                                        <div class="mt-3">
-                                            <input type="text" class="form-control" id="inputPassword" name="search" placeholder="Search">
-                                        </div>
-                                        <select id="inputState" class="form-control mt-2" name="column">
-                                            <option value="uname">ชื่อเจ้าของปาล์ม</option>
-                                            <option value="avg_level">ความสุกโดยเฉลี่ย</option>
-                                            <option value="date">วันที่</option>
-                                        </select>
-                                        <button type="submit" class="btn btn-primary mt-2">Search</button>
-                                    </div>
-                                </form>
-                            </center>
-                                
-
+                            <div class="mt-3 ms-3">
+                            <button type="button" class="btn btn-outline-primary"><a href="adminDashboard.php" class="text-decoration-none">Back</a> </button>
+                            </div>
                         <div class="container mt-3 text-center table-responsive">
                             <table class="table table-striped table-bordered ">
                                 <thead>
@@ -127,7 +113,9 @@ if (isset($_REQUEST['delete'])) {
 
                                 <tbody>
                                     <?php
-                                    $select_stmt = $db->prepare("SELECT * FROM purchase");
+                                    $search = $_POST['search'];
+                                    $column = $_POST['column'];
+                                    $select_stmt = $db->prepare("SELECT * FROM purchase where $column like '%$search%'");
                                     $select_stmt->execute();
 
                                     while ($row = $select_stmt->fetch(PDO::FETCH_ASSOC)) {
