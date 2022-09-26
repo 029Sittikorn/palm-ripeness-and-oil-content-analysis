@@ -58,7 +58,7 @@ if (isset($_REQUEST['delete'])) {
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item" style="margin-right: 30px;">
                                 <a href="register.php" class="text-decoration-none pe-4" style="color: gray;">Add User</a>
-                                <button type="button" class="btn btn-outline-primary"><a href="logout.php" class="text-decoration-none">Logout</a> </button>
+                                <a href="logout.php" type="button" class="btn btn-outline-primary" class="text-decoration-none">Logout</a>
                             </li>
                         </ul>
                     </div>
@@ -87,7 +87,7 @@ if (isset($_REQUEST['delete'])) {
                             Purchase form table
                         </h3>
                             <div class="mt-3 ms-3">
-                            <button type="button" class="btn btn-outline-primary"><a href="adminDashboard.php" class="text-decoration-none">Back</a> </button>
+                            <a href="adminDashboard.php" type="button" class="btn btn-outline-primary" class="text-decoration-none">Back</a>
                             </div>
                         <div class="container mt-3 text-center table-responsive">
                             <table class="table table-striped table-bordered ">

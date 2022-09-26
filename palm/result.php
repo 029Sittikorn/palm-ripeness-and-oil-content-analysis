@@ -31,7 +31,8 @@ if (isset($_POST['insert'])) {
             });
           });
       </script>";
-      header('refresh: 2; url:result.php');
+    header('refresh: 2; url:result.php');
+    
   } else {
 
     $query = "INSERT INTO purchase(uname, avg_level, oil_content, palm_quality, not_fully_ripe, wet, small, long_stem, impurity, rotten, fall, return_record) VALUES('$uname','$avg_level','$oil_content','$palm_quality','$not_fully_ripe','$wet','$small','$long_stem','$impurity','$rotten','$fall','$return_record')";
@@ -52,7 +53,6 @@ if (isset($_POST['insert'])) {
           });
       </script>";
       header('refresh: 2; url:result.php');
-      
     } else {
       $_SESSION['error'] = "Data has not been inserted successfully";
       echo "<script>
@@ -65,6 +65,7 @@ if (isset($_POST['insert'])) {
             });
           });
       </script>";
+      
       header('refresh: 2; url:result.php');
     }
   }

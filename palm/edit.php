@@ -95,7 +95,7 @@ if (isset($_POST['btn_update'])) {
     </div>
     <div class="container p-4 shadow mt-4">
       <div style="justify-content: center ;display: flex;">
-        <h1>แก้ไขข้อมูล</h1>
+        <h1>PURCHASE FORM</h1>
 
       </div>
       <div style="justify-content: end ;display: flex;">
@@ -221,21 +221,72 @@ if (isset($_POST['btn_update'])) {
                       </div>
                       <div class="row">
                         <div class="form-group mt-2 col-6">
-                          <label for="rotten">ปาล์มเน่า : <?= $data['rotten']; ?></label>
+                          <label for="rotten">ปาล์มเน่า</label>
                           <select name="rotten" id="rotten" class="form-control">
-                            <option value="" disabled selected>เลือกระดับ⠀⠀⠀⠀⠀⠀▼</option>
-                            <option value="ดี">ดี</option>
-                            <option value="ปานกลาง">ปานกลาง</option>
-                            <option value="ไม่ดี">ไม่ดี</option>
+                            <option value="ดี"
+                            <?php 
+                                if($data['rotten']=='ดี')
+                                {
+                                  echo "selected";
+                                }
+                                ;
+
+                              ?>>ดี
+                            </option>
+                            <option value="ปานกลาง"
+                            <?php 
+                                if($data['rotten']=='ปานกลาง')
+                                {
+                                  echo "selected";
+                                }
+                                ;
+
+                              ?>>ปานกลาง
+                            
+                            </option>
+                            <option value="ไม่ดี"
+                            <?php 
+                                if($data['rotten']=='ไม่ดี')
+                                {
+                                  echo "selected";
+                                }
+                                ;
+
+                              ?>>ไม่ดี
+                            
+                            </option>
                           </select>
                         </div>
                         <div class="form-group mt-2 col-6">
-                          <label for="fall">ปาล์มร่วงปน : <?= $data['fall']; ?></label>
+                          <label for="fall">ปาล์มร่วงปน</label>
                           <select name="fall" id="fall" class="form-control">
-                            <option value="" disabled selected>เลือกระดับ⠀⠀⠀⠀⠀⠀▼</option>
-                            <option value="มาก">มาก</option>
-                            <option value="น้อย">น้อย</option>
-                            <option value="ไม่มี">ไม่มี</option>
+                            <option value="มาก"
+                            <?php 
+                                if($data['fall']=='มาก')
+                                {
+                                  echo "selected";
+                                }
+                                ;
+
+                              ?>>มาก</option>
+                            <option value="น้อย"
+                            <?php 
+                                if($data['fall']=='น้อย')
+                                {
+                                  echo "selected";
+                                }
+                                ;
+
+                              ?>>น้อย</option>
+                            <option value="ไม่มี"
+                            <?php 
+                                if($data['fall']=='ไม่มี')
+                                {
+                                  echo "selected";
+                                }
+                                ;
+
+                              ?>>ไม่มี</option>
                           </select>
                         </div>
                       </div>

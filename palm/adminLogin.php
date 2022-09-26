@@ -32,8 +32,7 @@
                     </button>
                     <div class="collapse navbar-collapse " id="navbarNavDropdown">
                         <ul class="navbar-nav ms-auto">
-                            <li class="nav-item" style="margin-right: 0;">
-                                <button type="button" class="btn btn-outline-primary"><a href="index.php" class="text-decoration-none">Back to Home</a> </button>
+                            <li class="nav-item" style="margin-right: 0;"><a type="button" class="btn btn-outline-primary" href="index.php" class="text-decoration-none">Back to Home</a>
                             </li>
                         </ul>
                     </div>
@@ -41,17 +40,17 @@
             </div>
         </div>
         <center>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-8">
                 <div class="container centerver mt-5">
                     <div class="text-center">
                         <img src="img/โลโก้.png" style="width: 100px;" alt="logo">
-                        <h4 class="mt-1 mb-5 pb-1">We are The PALMY Team</h4>
+                        <h4 class="mt-1 mb-5 pb-1"><span style="font-size: 40px;">Welcome to </span> <br> OIL PALM RIPENESS ANALYZER <br> for Admin</h4>
                     </div>
 
             
                         <div class="text-center pt-1 mb-5 pb-1">
-                            <button style="width: 120px;" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-                                type="submit"  ><a href="login.php" style="color: white; text-decoration: none; ">Login</a></button>
+                            <a href="login.php" style="color: white; text-decoration: none; width: 100px; " class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                                type="submit">Login</a>
                         </div>
                     </form> 
                 </div>

@@ -35,8 +35,8 @@
           <div class="collapse navbar-collapse " id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item" style="margin-right: 0;">
-                <button type="button" class="btn btn-outline-primary"><a href="adminLogin.php"
-                    class="text-decoration-none">For admin</a> </button>
+                <a href="adminLogin.php" type="button" class="btn btn-outline-primary"
+                    class="text-decoration-none">For admin</a>
               </li>
             </ul>
           </div>
@@ -45,7 +45,7 @@
     </div>
     <div class="container-fluid pt-2">
       <div class="container">
-        <div class="row mt-3 align-items-center" id="slide" style="text-align: center;">
+        <div class="row mt-3 align-items-center" id="slide" style="text-align: center; height: 642px;">
           <div class="col-lg-6 col-12 pt-3">
             <img src="img/โลโก้.png" alt="" style="width: 100px;" class="">
             <h1 class="card-title">Oil palm fruit ripness analysis</h3>
