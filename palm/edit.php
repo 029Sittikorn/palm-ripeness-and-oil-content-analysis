@@ -95,7 +95,7 @@ if (isset($_POST['btn_update'])) {
     </div>
     <div class="container p-4 shadow mt-4">
       <div style="justify-content: center ;display: flex;">
-        <h1>PURCHASE FORM</h1>
+        <h3>EDIT PURCHASE FORM</h3>
 
       </div>
       <div style="justify-content: end ;display: flex;">
@@ -222,7 +222,7 @@ if (isset($_POST['btn_update'])) {
                       <div class="row">
                         <div class="form-group mt-2 col-6">
                           <label for="rotten">ปาล์มเน่า</label>
-                          <select name="rotten" id="rotten" class="form-control">
+                          <select name="rotten" id="rotten" class="form-select">
                             <option value="ดี"
                             <?php 
                                 if($data['rotten']=='ดี')
@@ -259,7 +259,7 @@ if (isset($_POST['btn_update'])) {
                         </div>
                         <div class="form-group mt-2 col-6">
                           <label for="fall">ปาล์มร่วงปน</label>
-                          <select name="fall" id="fall" class="form-control">
+                          <select name="fall" id="fall" class="form-select">
                             <option value="มาก"
                             <?php 
                                 if($data['fall']=='มาก')

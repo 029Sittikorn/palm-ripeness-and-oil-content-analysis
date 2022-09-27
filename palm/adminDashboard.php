@@ -23,7 +23,6 @@ if (isset($_REQUEST['delete'])) {
 
     header('url = adminDashboard.php');
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -35,14 +34,18 @@ if (isset($_REQUEST['delete'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palmy</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap" rel="stylesheet">
+    
 </head>
 
-<body>
+<body style="font-family: 'Noto Sans Thai', sans-serif;">
     <div class="container-fluid">
         <div class="container-fluid shadow">
             <div class="container ">
@@ -57,8 +60,8 @@ if (isset($_REQUEST['delete'])) {
                     <div class="collapse navbar-collapse " id="navbarNavDropdown">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item" style="margin-right: 30px;">
-                                <a href="register.php" class="text-decoration-none pe-4" style="color: gray;">Add User</a>
-                                <a href="logout.php" type="button" class="btn btn-outline-primary" class="text-decoration-none">Logout</a>
+                                <a href="register.php" class="text-decoration-none pe-4" style="color: gray;">เพิ่มบัญชีผู้ใช้</a>
+                                <a href="logout.php" type="button" class="btn btn-outline-primary" class="text-decoration-none"><i class="fa-solid fa-right-from-bracket"></i> ออกจากระบบ</a>
                             </li>
                         </ul>
                     </div>
@@ -68,11 +71,11 @@ if (isset($_REQUEST['delete'])) {
         <div class="container p-4 shadow  mt-4">
             <ul class="nav nav-pills" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button" role="tab" aria-controls="pills-form" aria-selected="false">Manage Purchase form
+                    <button class="nav-link active" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button" role="tab" aria-controls="pills-form" aria-selected="false">รายการซื้อปาล์ม
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link " id="pills-result-tab" data-bs-toggle="pill" data-bs-target="#pills-result" type="button" role="tab" aria-controls="pills-result" aria-selected="true">Manage knowledge base
+                    <button class="nav-link " id="pills-result-tab" data-bs-toggle="pill" data-bs-target="#pills-result" type="button" role="tab" aria-controls="pills-result" aria-selected="true">จัดการฐานความรู้
                     </button>
                 </li>
 
@@ -84,20 +87,20 @@ if (isset($_REQUEST['delete'])) {
                     <!-- Editable table -->
                     <div class="card col-12 mt-4">
                         <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
-                            Purchase form table
+                            ตารางจัดการรายการซื้อปาล์ม
                         </h3>
                             <center >
                                 <form action="adminDashboardsearch.php" method="post" style=" max-width: 350px;" class="">
                                     <div class="form-group">
                                         <div class="mt-3">
-                                            <input type="text" class="form-control" id="inputPassword" name="search" placeholder="Search">
+                                            <input type="text" class="form-control" id="inputPassword" name="search" placeholder="ค้นหาใน รายการซื้อปาล์ม:">
                                         </div>
-                                        <select id="inputState" class="form-control mt-2" name="column">
+                                        <select id="inputState" class="form-select mt-2" name="column">
                                             <option value="uname">ชื่อเจ้าของปาล์ม</option>
                                             <option value="avg_level">ความสุกโดยเฉลี่ย</option>
                                             <option value="date">วันที่</option>
                                         </select>
-                                        <button type="submit" class="btn btn-primary mt-2">Search</button>
+                                        <button type="submit" class="btn btn-primary mt-2"><i class="fa-solid fa-magnifying-glass"></i> ค้นหา</button>
                                     </div>
                                 </form>
                             </center>
@@ -146,8 +149,8 @@ if (isset($_REQUEST['delete'])) {
                                             <td><?php echo $row["fall"] ?></td>
                                             <td><?php echo $row["return_record"] ?></td>
                                             <td><?php echo $row["date"] ?></td>
-                                            <td><a href="edit.php?update_id=<?php echo $row["id"] ?>" class="btn btn-warning">Edit</a></td>
-                                            <td><a data-id="<?php echo $row["id"] ?>" href="?delete=<?php echo $row["id"] ?>" class="btn btn-danger delete-btn">Delete</a></td>
+                                            <td><a href="edit.php?update_id=<?php echo $row["id"] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> แก้ไข</a></td>
+                                            <td><a data-id="<?php echo $row["id"] ?>" href="?delete=<?php echo $row["id"] ?>" class="btn btn-danger delete-btn"><i class="fa-solid fa-trash"></i> ลบ</a></td>
                                         </tr>
 
                                     <?php } ?>
@@ -211,7 +214,7 @@ if (isset($_REQUEST['delete'])) {
                                 </div>
                                 <div class="content">
                                     <div style="font-size: 100px;color: #0d6efd;"><i class="fas fa-cloud-upload-alt"></i></div>
-                                    <div style="font-size: 30px;font-weight: 400;color: #0d6efd;">No file chosen, yet!</div>
+                                    <div style="font-size: 30px;font-weight: 400;color: #0d6efd;">ไม่ได้เลือกไฟล์ใด</div>
                                 </div>
 
                             </div>
@@ -220,7 +223,7 @@ if (isset($_REQUEST['delete'])) {
 
                         <div style="max-width: 600px;" class="imagePreview w-100">
                             <input id="imageUpload" type="file" hidden />
-                            <button onclick="imageuploadActive()" id="custom-btn" style="margin: 20px 0px;width: 100%;display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;">Choose a file</button>
+                            <button onclick="imageuploadActive()" id="custom-btn" style="margin: 20px 0px;width: 100%;display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;">เลือกไฟล์</button>
                         </div>
 
                         <script>
@@ -337,7 +340,7 @@ if (isset($_REQUEST['delete'])) {
                             <center>
 
                                 <button type="button" class="btn btn-outline-primary mt-4 mb-2">
-                                    <img src="img/thought.png" style="width: 20px; " class="me-2">Add to knowledgebase</button>
+                                    <img src="img/thought.png" style="width: 20px; " class="me-2">เพิ่มฐานความรู้</button>
                             </center>
 
                         </div>
@@ -358,22 +361,27 @@ if (isset($_REQUEST['delete'])) {
             <div class="container">
                 <footer class="text-center text-white">
                     <div class="container p-4">
-                        <section class="mb-4">
-                            <button type="button" class="btn btn-outline-light ">
-                                <img src="img/world (2).png" alt="" style="width: 20px;" class="me-2">English<img src="img/next.png" alt="" style="width: 20px;" class="">
-                            </button>
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                                <img src="img/facebook-app-symbol.png" alt="" style="width: 20px;" class="">
-                            </a>
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                                <img src="img/twitter.png" alt="" style="width: 20px;" class="">
-                            </a>
-                        </section>
+                    <section class="mb-2">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                        <img src="img/facebook-app-symbol.png" alt="" style="width: 20px;" class="">
+                    </a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                        <img src="img/twitter.png" alt="" style="width: 20px;" class="">
+                    </a>
+                    </section>
+                    <section class="mb-4">
+                    <button type="button" class="btn btn-outline-light " id="google_translate_element">
+                    </button>
+                    <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({pageLanguage: 'th'}, 'google_translate_element');
+                    }
+                    </script>
+                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                    </section>
                         <section class="mb-2">
                             <p>
-                                We are expecting to obtain a system for assessing oil palm bunch ripeness and oil
-                                content by image
-                                processing in a web application form.
+                            เราคาดว่าจะได้รับระบบสำหรับประเมินความสุกของปาล์มน้ำมันโดยการประมวลผลภาพในรูปแบบเว็บไซต์
                             </p>
                         </section>
                     </div>
@@ -384,7 +392,7 @@ if (isset($_REQUEST['delete'])) {
                     <div class="text-center p-3">
                         <h5 style="color: white;">
                             <img src="img/โลโก้bw.png" alt="" style="width: 20px;" class="">
-                            PALMY by PSU-Surat
+                            OIL PALM RIPENESS ANALYZER by PSU-Surat
                         </h5>
                         <p class="text-white">© 2020 Copyright: <a class="text-white" href="https://www.psu.ac.th/">psu.ac.th</a>
                         </p>
@@ -398,6 +406,7 @@ if (isset($_REQUEST['delete'])) {
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
 </body>
 
 </html>

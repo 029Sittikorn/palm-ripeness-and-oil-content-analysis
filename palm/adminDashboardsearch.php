@@ -35,19 +35,22 @@ if (isset($_REQUEST['delete'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palmy</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body style="font-family: 'Noto Sans Thai', sans-serif;">
     <div class="container-fluid">
         <div class="container-fluid shadow">
             <div class="container ">
                 <nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
-                    <a class="navbar-brand mt-1" href="adminDashboard.php" style="font-size: 28px; font-family: 'Reem Kufi Fun', sans-serif; ">
+                    <a class="navbar-brand mt-1" href="" style="font-size: 28px; font-family: 'Reem Kufi Fun', sans-serif; ">
                         <img src="img/โลโก้.png" alt="" style="max-height: 50px; " class="me-3">
                         <span class="d-none d-md-inline">OIL PALM RIPENESS ANALYZER</span>
                     </a>
@@ -57,8 +60,8 @@ if (isset($_REQUEST['delete'])) {
                     <div class="collapse navbar-collapse " id="navbarNavDropdown">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item" style="margin-right: 30px;">
-                                <a href="register.php" class="text-decoration-none pe-4" style="color: gray;">Add User</a>
-                                <a href="logout.php" type="button" class="btn btn-outline-primary" class="text-decoration-none">Logout</a>
+                                <a href="register.php" class="text-decoration-none pe-4" style="color: gray;">เพิ่มบัญชีผู้ใช้</a>
+                                <a href="logout.php" type="button" class="btn btn-outline-primary" class="text-decoration-none"><i class="fa-solid fa-right-from-bracket"></i> ออกจากระบบ</a>
                             </li>
                         </ul>
                     </div>
@@ -68,11 +71,11 @@ if (isset($_REQUEST['delete'])) {
         <div class="container p-4 shadow  mt-4">
             <ul class="nav nav-pills" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button" role="tab" aria-controls="pills-form" aria-selected="false">Manage Purchase form
+                    <button class="nav-link active" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button" role="tab" aria-controls="pills-form" aria-selected="false">รายการซื้อปาล์ม
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link " id="pills-result-tab" data-bs-toggle="pill" data-bs-target="#pills-result" type="button" role="tab" aria-controls="pills-result" aria-selected="true">Manage knowledge base
+                    <button class="nav-link " id="pills-result-tab" data-bs-toggle="pill" data-bs-target="#pills-result" type="button" role="tab" aria-controls="pills-result" aria-selected="true">จัดการฐานความรู้
                     </button>
                 </li>
 
@@ -84,10 +87,10 @@ if (isset($_REQUEST['delete'])) {
                     <!-- Editable table -->
                     <div class="card col-12 mt-4">
                         <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
-                            Purchase form table
+                            ตารางจัดการรายการซื้อปาล์ม
                         </h3>
                             <div class="mt-3 ms-3">
-                            <a href="adminDashboard.php" type="button" class="btn btn-outline-primary" class="text-decoration-none">Back</a>
+                            <a href="adminDashboard.php" type="button" class="btn btn-outline-primary" class="text-decoration-none">ย้อนกลับ</a>
                             </div>
                         <div class="container mt-3 text-center table-responsive">
                             <table class="table table-striped table-bordered ">
@@ -134,8 +137,8 @@ if (isset($_REQUEST['delete'])) {
                                             <td><?php echo $row["fall"] ?></td>
                                             <td><?php echo $row["return_record"] ?></td>
                                             <td><?php echo $row["date"] ?></td>
-                                            <td><a href="edit.php?update_id=<?php echo $row["id"] ?>" class="btn btn-warning">Edit</a></td>
-                                            <td><a data-id="<?php echo $row["id"] ?>" href="?delete=<?php echo $row["id"] ?>" class="btn btn-danger delete-btn">Delete</a></td>
+                                            <td><a href="edit.php?update_id=<?php echo $row["id"] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> แก้ไข</a></td>
+                                            <td><a data-id="<?php echo $row["id"] ?>" href="?delete=<?php echo $row["id"] ?>" class="btn btn-danger delete-btn"><i class="fa-solid fa-trash"></i> ลบ</a></td>
                                         </tr>
 
                                     <?php } ?>
@@ -346,22 +349,27 @@ if (isset($_REQUEST['delete'])) {
             <div class="container">
                 <footer class="text-center text-white">
                     <div class="container p-4">
-                        <section class="mb-4">
-                            <button type="button" class="btn btn-outline-light ">
-                                <img src="img/world (2).png" alt="" style="width: 20px;" class="me-2">English<img src="img/next.png" alt="" style="width: 20px;" class="">
-                            </button>
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                                <img src="img/facebook-app-symbol.png" alt="" style="width: 20px;" class="">
-                            </a>
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                                <img src="img/twitter.png" alt="" style="width: 20px;" class="">
-                            </a>
-                        </section>
+                    <section class="mb-2">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                        <img src="img/facebook-app-symbol.png" alt="" style="width: 20px;" class="">
+                    </a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                        <img src="img/twitter.png" alt="" style="width: 20px;" class="">
+                    </a>
+                    </section>
+                    <section class="mb-4">
+                    <button type="button" class="btn btn-outline-light " id="google_translate_element">
+                    </button>
+                    <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({pageLanguage: 'th'}, 'google_translate_element');
+                    }
+                    </script>
+                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                    </section>
                         <section class="mb-2">
                             <p>
-                                We are expecting to obtain a system for assessing oil palm bunch ripeness and oil
-                                content by image
-                                processing in a web application form.
+                            เราคาดว่าจะได้รับระบบสำหรับประเมินความสุกของปาล์มน้ำมันโดยการประมวลผลภาพในรูปแบบเว็บไซต์
                             </p>
                         </section>
                     </div>
@@ -372,7 +380,7 @@ if (isset($_REQUEST['delete'])) {
                     <div class="text-center p-3">
                         <h5 style="color: white;">
                             <img src="img/โลโก้bw.png" alt="" style="width: 20px;" class="">
-                            PALMY by PSU-Surat
+                            OIL PALM RIPENESS ANALYZER by PSU-Surat
                         </h5>
                         <p class="text-white">© 2020 Copyright: <a class="text-white" href="https://www.psu.ac.th/">psu.ac.th</a>
                         </p>

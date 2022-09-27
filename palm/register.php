@@ -20,9 +20,12 @@ if (!isset($_SESSION['is_logged_in'])) {
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="custom_reg.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap" rel="stylesheet">
 </head>
 
-<body class="login-background-blue">
+<body class="login-background-blue" style="font-family: 'Noto Sans Thai', sans-serif;">
 
     <div class="flex-login-form">
 
@@ -52,24 +55,24 @@ if (!isset($_SESSION['is_logged_in'])) {
         <form class="p-5 card login-card-custom" action="register_db.php" method="post">
 
             <div class="form-outline mb-3">
-                <label class="form-label" for="form1Example1">Username</label>
+                <label class="form-label" for="form1Example1">ชื่อผู้ใช้</label>
                 <input type="text" name="username" class="form-control" />
             </div>
 
             <div class="form-outline mb-3">
-                <label class="form-label" for="form1Example1">Password</label>
+                <label class="form-label" for="form1Example1">รหัสผ่าน</label>
                 <input type="password" name="password" class="form-control" />
             </div>
 
             <div class="form-outline mb-3">
-                <label class="form-label" for="form1Example1">Confirm Password</label>
+                <label class="form-label" for="form1Example1">ยืนยันรหัสผ่าน</label>
                 <input type="password" name="confirm_password" class="form-control" />
             </div>
             <div class="row">
-                <p class="text-center">กลับไปยังหน้าหลัก <a href="adminDashboard.php">ย้อนกลับ</a></p>
+                <p class="text-center">กลับไปยังหน้าหลัก ? <a href="adminDashboard.php">หน้าหลัก</a></p>
             </div>
 
-            <button type="submit" name="submit" class="btn login-btn-blue btn-block text-white">Register</button>
+            <button type="submit" name="submit" class="btn login-btn-blue btn-block text-white">สมัครสมาชิก</button>
 
         </form>
     </div>

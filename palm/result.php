@@ -81,14 +81,16 @@ if (isset($_POST['insert'])) {
   <title>Palmy</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body style="font-family: 'Noto Sans Thai', sans-serif;">
   <div class="container-fluid ">
     <div class="container-fluid shadow">
       <div class="container ">
@@ -104,37 +106,22 @@ if (isset($_POST['insert'])) {
           <div class="collapse navbar-collapse " id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item" style="margin-right: 0;">
-                <button type="button" class="btn btn-outline-primary"><a href="adminLogin.php" class="text-decoration-none">For admin</a> </button>
+                <a href="adminLogin.php" type="button" class="btn btn-outline-primary" class="text-decoration-none"><i class="fa-solid fa-lock"></i> สำหรับแอดมิน</a>
               </li>
             </ul>
           </div>
         </nav>
       </div>
     </div>
-    <center>
-      <div class="d-flex justify-content-center mt-4">
-        <input id="image-btn" type="file" hidden />
-        <button onclick="imageBtnActive()" id="custom1-btn" style="margin: 20px 0px;width: 170px; display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;"><i class="fa-solid fa-arrow-up-from-bracket"></i> อัพโหลดรูปภาพ</button>
-      </div>
-
-      <script>
-        const imageBtn = document.querySelector("#image-btn");
-        const customBtn1 = document.querySelector("#custom1-btn");
-
-        function imageBtnActive() {
-          imageBtn.click();
-        }
-      </script>
-
-    </center>
+    
     <div class="container p-4 shadow mt-4" style="background-image: url('img/Palm sunday greetings instagram stories.png'); background-repeat: no-repeat; background-position: center top; background-size: cover;">
       <ul class="nav nav-pills" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="pills-result-tab" data-bs-toggle="pill" data-bs-target="#pills-result" type="button" role="tab" aria-controls="pills-result" aria-selected="true">Analysis results
+          <button class="nav-link active" id="pills-result-tab" data-bs-toggle="pill" data-bs-target="#pills-result" type="button" role="tab" aria-controls="pills-result" aria-selected="true">ผลการวิเคราะห์
           </button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button" role="tab" aria-controls="pills-form" aria-selected="false">Purchase form</button>
+          <button class="nav-link" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button" role="tab" aria-controls="pills-form" aria-selected="false">ฟอร์มซื้อปาล์ม</button>
         </li>
 
       </ul>
@@ -144,10 +131,23 @@ if (isset($_POST['insert'])) {
           <!-- Show in result tap -->
           <div class="col-lg-6 col-12 rounded overflow-hidden">
             <img src="img/S__16187531.png" class="img-fluid" alt="Responsive image">
+            <center>
+      <div class="d-flex justify-content-center mt-4">
+        <input id="image-btn" type="file" hidden />
+        <button onclick="imageBtnActive()" id="custom1-btn" style="margin: 20px 0px;width: 170px; display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;">อัพโหลดรูปภาพ</button>
+      </div>
+      <script>
+        const imageBtn = document.querySelector("#image-btn");
+        const customBtn1 = document.querySelector("#custom1-btn");
+        function imageBtnActive() {
+          imageBtn.click();
+        }
+      </script>
+    </center>
           </div>
           <div class="col-lg-6 col-12 centerver shadow rounded" style="max-width: 550px; background-color: white;">
-            <div class="">
-              <h4 class="texttopmarginresult mt-3">Analysis results details</h4>
+            <div class="p-2">
+              <h4 class="texttopmarginresult mt-3">รายละเอียดของผลการวิเคราะห์</h4>
               <div class="mt-4 centerver">
                 <div class="row">
                   <div class="col releft">
@@ -182,9 +182,6 @@ if (isset($_POST['insert'])) {
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="d-flex justify-content-center ">
-              <a href="#" class="btn btn-outline-primary mt-2 mb-4"><img src="img/contact-form.png" alt="" style="width: 20px;" class="me-2">Fill purchase form</a>
             </div>
           </div>
         </div>
@@ -284,8 +281,8 @@ if (isset($_POST['insert'])) {
                   <div class="row">
                     <div class="form-group mt-2 col-6">
                       <label for="rotten">ปาล์มเน่า</label>
-                      <select name="rotten" id="rotten" class="form-control">
-                        <option value="">เลือกระดับ⠀⠀⠀⠀⠀⠀▼</option>
+                      <select name="rotten" id="rotten" class="form-select">
+                        <option value="">เลือกระดับ</option>
                         <option value="ดี">ดี</option>
                         <option value="ปานกลาง">ปานกลาง</option>
                         <option value="ไม่ดี">ไม่ดี</option>
@@ -293,8 +290,8 @@ if (isset($_POST['insert'])) {
                     </div>
                     <div class="form-group mt-2 col-6">
                       <label for="fall">ปาล์มร่วงปน</label>
-                      <select name="fall" id="fall" class="form-control">
-                        <option value="">เลือกระดับ⠀⠀⠀⠀⠀⠀▼</option>
+                      <select name="fall" id="fall" class="form-select">
+                        <option value="">เลือกระดับ</option>
                         <option value="มาก">มาก</option>
                         <option value="น้อย">น้อย</option>
                         <option value="ไม่มี">ไม่มี</option>
@@ -306,7 +303,7 @@ if (isset($_POST['insert'])) {
                     <input type="text" class="form-control" name="return_record" >
                   </div>
                   <div class="form-group mt-4">
-                    <button type="submit" name="insert" class="btn btn-primary me-lg-3 mb-4 form-control" data-bs-toggle="modal"><img src="img/save.png" style="width: 20px;" class="me-2">Save to database</button>
+                    <button type="submit" name="insert" class="btn btn-primary me-lg-3 mb-4 form-control" data-bs-toggle="modal"><img src="img/save.png" style="width: 20px;" class="me-2">บันทึกลงในฐานข้อมูล</button>
                   </div>
               </div>
               </form>
@@ -319,10 +316,7 @@ if (isset($_POST['insert'])) {
       <div class="container">
         <footer class="text-center text-white">
           <div class="container p-4">
-            <section class="mb-4">
-              <button type="button" class="btn btn-outline-light ">
-                <img src="img/world (2).png" alt="" style="width: 20px;" class="me-2">English<img src="img/next.png" alt="" style="width: 20px;" class="">
-              </button>
+          <section class="mb-2">
               <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
                 <img src="img/facebook-app-symbol.png" alt="" style="width: 20px;" class="">
               </a>
@@ -330,10 +324,19 @@ if (isset($_POST['insert'])) {
                 <img src="img/twitter.png" alt="" style="width: 20px;" class="">
               </a>
             </section>
+            <section class="mb-4">
+              <button type="button" class="btn btn-outline-light " id="google_translate_element">
+              </button>
+              <script type="text/javascript">
+              function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'th'}, 'google_translate_element');
+              }
+              </script>
+              <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            </section>
             <section class="mb-2">
               <p>
-                We are expecting to obtain a system for assessing oil palm bunch ripeness and oil content by image
-                processing in a web application form.
+                เราคาดว่าจะได้รับระบบสำหรับประเมินความสุกของปาล์มน้ำมันโดยการประมวลผลภาพในรูปแบบเว็บไซต์
               </p>
             </section>
           </div>
@@ -344,7 +347,7 @@ if (isset($_POST['insert'])) {
           <div class="text-center p-3">
             <h5 style="color: white;">
               <img src="img/โลโก้bw.png" alt="" style="width: 20px;" class="">
-              PALMY by PSU-Surat
+              OIL PALM RIPENESS ANALYZER by PSU-Surat
             </h5>
             <p class="text-white">© 2020 Copyright: <a class="text-white" href="https://www.psu.ac.th/">psu.ac.th</a>
             </p>
@@ -353,72 +356,7 @@ if (isset($_POST['insert'])) {
       </div>
     </div>
   </div>
+  
 </body>
 
 </html>
-
-<?php
-/* if (isset($_SESSION['err_fill']) || isset($_SESSION['err_pw']) || isset($_SESSION['exist_uname']) || isset($_SESSION['err_insert'])) {
-  unset($_SESSION['err_fill']);
-  unset($_SESSION['err_pw']);
-  unset($_SESSION['exist_uname']);
-  unset($_SESSION['err_insert']);
-} */
-?>
-<!-- <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-input-tab" data-bs-toggle="pill" data-bs-target="#pills-input"
-            type="button" role="tab" aria-controls="pills-input" aria-selected="false">Input</button>
-        </li>
-        <div class="tab-pane fade show " id="pills-pass" role="tabpanel" aria-labelledby="pills-pass-tab">
-          <div class=" col-12 col-lg-6 p-lg-5 centerver">
-            <div class="form-group mt-2">
-              <label for="ur">Password</label>
-              <input type="text" class="form-control" id="ur" placeholder="กรอกรหัสผ่าน admin">
-            </div>
-            <div class="d-flex justify-content-center" style="margin: 5%;">
-              <a class="btn btn-primary">Confirm</a>
-            </div>
-          </div>
-        </div>
-        <div class="tab-pane fade show" id="pills-input" role="tabpanel" aria-labelledby="pills-input-tab">
-          <div class="col-lg-6 col-12 mt-4"><img src="img/IMG_4553.JPG" class="img-fluid" alt="Responsive image">
-          </div>
-
-          <div class=" col-12 col-lg-6 p-lg-5 centerver">
-            <div class="d-flex justify-content-center" style="margin: 8%;">
-              <a href="#" class="btn btn-primary"><img src="img/upload (1).png" alt="" style="width: 20px;"
-                  class="me-2">Upload Image</a>
-            </div>
-
-            <div class="bartext1 d-flex justify-content-between">
-
-              <p>Ripeness</p>
-              <p class="text-right">ดิบ</p>
-            </div>
-            <div class="progress" style="height: 25px;">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                style="width: 25%; background-color:#000000;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                ดิบ</div>
-              <div class="progress-bar" role="progressbar" style="width: 25%; background-color:#3e0001;"
-                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">เกือบดิบ</div>
-              <div class="progress-bar" role="progressbar" style="width: 25%; background-color:#7c0000;"
-                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">เกือบสุก</div>
-              <div class="progress-bar" role="progressbar" style="width: 25%; background-color:#ba0001;"
-                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">สุก</div>
-            </div>
-            <div class="bartext2 d-flex justify-content-between mt-2">
-              <p>Oil content</p>
-              <p class="text-right">15.05%</p>
-            </div>
-            <div class="progress" style="height: 25px;">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                style="width: 15.05%;" aria-valuenow="15.05" aria-valuemin="0" aria-valuemax="100">15.05%</div>
-            </div>
-            <center>
-              <button type="button" class="btn btn-outline-primary mt-3">Add</button>
-              <button type="button" class="btn btn-outline-primary mt-3">Update</button>
-              <button type="button" class="btn btn-outline-primary mt-3">Delete</button>
-            </center>
-
-          </div>
-        </div> -->

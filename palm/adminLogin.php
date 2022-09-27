@@ -14,9 +14,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 
-<body>
+<body style="font-family: 'Noto Sans Thai', sans-serif;">
     <div class="container-fluid">
         <div class="container-fluid shadow">
             <div class="container ">
@@ -32,7 +36,7 @@
                     </button>
                     <div class="collapse navbar-collapse " id="navbarNavDropdown">
                         <ul class="navbar-nav ms-auto">
-                            <li class="nav-item" style="margin-right: 0;"><a type="button" class="btn btn-outline-primary" href="index.php" class="text-decoration-none">Back to Home</a>
+                            <li class="nav-item" style="margin-right: 0;"><a type="button" class="btn btn-outline-primary" href="index.php" class="text-decoration-none"><i class="fa-solid fa-house"></i> หน้าหลัก</a>
                             </li>
                         </ul>
                     </div>
@@ -40,18 +44,19 @@
             </div>
         </div>
         <center>
-            <div class="col-12 col-lg-8">
-                <div class="container centerver mt-5">
+            <div class="col-12 col-lg-8" >
+                <div class="container centerver mt-5" style="text-align: center; height: 510px; display: flex; justify-content: center; align-items: center;">
                     <div class="text-center">
                         <img src="img/โลโก้.png" style="width: 100px;" alt="logo">
-                        <h4 class="mt-1 mb-5 pb-1"><span style="font-size: 40px;">Welcome to </span> <br> OIL PALM RIPENESS ANALYZER <br> for Admin</h4>
+                        <h4 class="mt-1 pb-1"><span style="font-size: 40px;">ยินดีต้อนรับสู่</span> <br>ระบบวิเคราะห์ความสุกของผลปาล์มน้ำมัน<br> สำหรับแอดมิน</h4>
+                        <div class="text-center pt-1 mb-5 pb-1">
+                            <a href="login.php" style="color: white; text-decoration: none; width: 100px; " class="btn btn-primary  mb-3"
+                                type="submit">เข้าสู่ระบบ</a>
+                        </div>
                     </div>
 
             
-                        <div class="text-center pt-1 mb-5 pb-1">
-                            <a href="login.php" style="color: white; text-decoration: none; width: 100px; " class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-                                type="submit">Login</a>
-                        </div>
+                        
                     </form> 
                 </div>
             </div>
@@ -61,23 +66,27 @@
             <div class="container">
                 <footer class="text-center text-white">
                     <div class="container p-4">
-                        <section class="mb-4">
-                            <button type="button" class="btn btn-outline-light ">
-                                <img src="img/world (2).png" alt="" style="width: 20px;" class="me-2">English<img
-                                    src="img/next.png" alt="" style="width: 20px;" class="">
-                            </button>
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                                <img src="img/facebook-app-symbol.png" alt="" style="width: 20px;" class="">
-                            </a>
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                                <img src="img/twitter.png" alt="" style="width: 20px;" class="">
-                            </a>
-                        </section>
+                    <section class="mb-2">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                        <img src="img/facebook-app-symbol.png" alt="" style="width: 20px;" class="">
+                    </a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                        <img src="img/twitter.png" alt="" style="width: 20px;" class="">
+                    </a>
+                    </section>
+                    <section class="mb-4">
+                    <button type="button" class="btn btn-outline-light " id="google_translate_element">
+                    </button>
+                    <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({pageLanguage: 'th'}, 'google_translate_element');
+                    }
+                    </script>
+                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                    </section>
                         <section class="mb-2">
                             <p>
-                                We are expecting to obtain a system for assessing oil palm bunch ripeness and oil
-                                content by image
-                                processing in a web application form.
+                                เราคาดว่าจะได้รับระบบสำหรับประเมินความสุกของปาล์มน้ำมันโดยการประมวลผลภาพในรูปแบบเว็บไซต์
                             </p>
                         </section>
                     </div>
@@ -88,7 +97,7 @@
                     <div class="text-center p-3">
                         <h5 style="color: white;">
                             <img src="img/โลโก้bw.png" alt="" style="width: 20px;" class="">
-                            PALMY by PSU-Surat
+                            OIL PALM RIPENESS ANALYZER by PSU-Surat
                         </h5>
                         <p class="text-white">© 2020 Copyright: <a class="text-white"
                                 href="https://www.psu.ac.th/">psu.ac.th</a>
