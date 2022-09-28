@@ -94,7 +94,6 @@ if (isset($_POST['insert'])) {
   <div class="container-fluid ">
     <div class="container-fluid shadow">
       <div class="container ">
-
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
           <a class="navbar-brand mt-1" href="index.php" style="font-size: 28px; font-family: 'Reem Kufi Fun', sans-serif; ">
             <img src="img/โลโก้.png" alt="" style="max-height: 50px; " class="me-3">
@@ -113,7 +112,6 @@ if (isset($_POST['insert'])) {
         </nav>
       </div>
     </div>
-    
     <div class="container p-4 shadow mt-4" style="background-image: url('img/Palm sunday greetings instagram stories.png'); background-repeat: no-repeat; background-position: center top; background-size: cover;">
       <ul class="nav nav-pills" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -123,79 +121,107 @@ if (isset($_POST['insert'])) {
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button" role="tab" aria-controls="pills-form" aria-selected="false">ฟอร์มซื้อปาล์ม</button>
         </li>
-
       </ul>
-
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active mt-4 mb-4" id="pills-result" role="tabpanel" aria-labelledby="pills-result-tab" style="max-width: 1110px;  margin-left: auto; margin-right: auto;">
           <!-- Show in result tap -->
-          
-          <div class="col-lg-6 col-12 rounded overflow-hidden "><center>
-            <img src="img/S__16187531.png" id="output" style="border:2px dashed #0d6efd  ; border-radius: 10px;" class="img-fluid" alt="Responsive image">
-            
-     <!--  <div class="d-flex justify-content-center mt-4 imagePreview">
-        <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;" />
-        <button for="file" style="margin: 20px 0px;width: 170px; display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;">อัพโหลดรูปภาพ</button>
-      </div> -->
-      <!-- <script>
-        const imageBtn = document.querySelector("#image-btn");
-        const customBtn1 = document.querySelector("#custom1-btn");
-        function imageBtnActive() {
-          imageBtn.click();
-        }
-      </script> -->
+          <div class="mt-3 container" style="display: grid;height: 100%;place-items: center;text-align: center;">
+                        <div style="height: 400px; max-width: 600px;" class="imagePreview w-100">
+                            <div style="position: relative; height: 350px;width: 100%;border: 2px dashed #0d6efd;border-radius: 10px;display: flex;align-items: center;justify-content: center;overflow: hidden;" class="wrapper mt-3 mb-3">
+                                <div style=" position: absolute;height: 100%; width: 100%;display: flex;align-items: center;justify-content: center;">
+                                    <img style="width: 100%;height: 100%;object-fit: cover;" id="imagePreview">
+                                </div>
+                                <div class="content">
+                                    <div style="font-size: 100px;color: #0d6efd;"><i class="fas fa-cloud-upload-alt"></i></div>
+                                    <div style="font-size: 30px;font-weight: 400;color: #0d6efd;">ไม่ได้เลือกไฟล์ใด</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="max-width: 600px;" class="imagePreview w-100">
+                            <input id="imageUpload" type="file" hidden />
+                            <button onclick="imageuploadActive()" id="custom-btn" style="width: 100%;display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;">เลือกไฟล์</button>
+                        </div>
 
-<p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
-<p><label for="file" style="cursor: pointer;width: 170px;margin: 30px 0px; display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;">อัพโหลดรูปภาพ</label></p>
-<p><img id="output" width="200" /></p>
+                        <script>
+                            const imageupload = document.querySelector("#imageUpload");
+                            const customBtn = document.querySelector("#custom-btn");
 
-<script>
-var loadFile = function(event) {
-	var image = document.getElementById('output');
-	image.src = URL.createObjectURL(event.target.files[0]);
-};
-</script>
-    </center>
-          </div>
-          <div class="col-lg-6 col-12 centerver shadow rounded" style="max-width: 550px; background-color: white;">
-            <div class="p-2">
-              <h4 class="texttopmarginresult mt-3">รายละเอียดของผลการวิเคราะห์</h4>
-              <div class="mt-4 centerver">
-                <div class="row">
-                  <div class="col releft">
-                    <p>ทะลายสุก</p>
-                  </div>
-                  <div class="col">
-                    <p><b>6</b></p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col releft">
-                    <p>ทะลายเกือบสุก</p>
-                  </div>
-                  <div class="col">
-                    <p><b>4</b></p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col releft">
-                    <p>ทะลายเกือบดิบ</p>
-                  </div>
-                  <div class="col">
-                    <p><b>1</b></p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col releft">
-                    <p>ทะลาบดิบ</p>
-                  </div>
-                  <div class="col">
-                    <p><b>4</b></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                            function imageuploadActive() {
+                                imageupload.click();
+                            }
+                        </script>
+                        <div class="col-12 col-lg-5 pt-lg-5">
+                            <div id="label-container"></div>
+                            <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+                            <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+
+                            <script type="text/javascript">
+                                const URL = 'https://teachablemachine.withgoogle.com/models/DycO8K5Gg/';
+                                let model, webcam, labelContainer, maxPredictions;
+                                // Load the image model 
+                                async function init() {
+                                    const modelURL = URL + 'model.json';
+                                    const metadataURL = URL + 'metadata.json';
+
+                                    // load the model and metadata
+                                    model = await tmImage.load(modelURL, metadataURL);
+                                    maxPredictions = model.getTotalClasses();
+
+                                    /* const flip = true; // whether to flip the webcam
+                                    webcam = new tmImage.Webcam(400, 400, flip); // width, height, flip
+                                    await webcam.setup(); // request access to the webcam
+                                    await webcam.play();
+                                    window.requestAnimationFrame(loop);
+
+                                    document.getElementById("webcam-container").appendChild(webcam.canvas); */
+                                    labelContainer = document.getElementById('label-container');
+                                    for (let i = 0; i < maxPredictions; i++) {
+                                        // and class labels
+                                        labelContainer.appendChild(document.createElement('div'));
+                                    }
+                                }
+                                /* 
+                                                                async function loop() {
+                                                                    webcam.update(); // update the webcam frame
+                                                                    await predict();
+                                                                    window.requestAnimationFrame(loop);
+                                                                } */
+
+                                async function predict() {
+                                    // predict can take in an image, video or canvas html element
+                                    var image = document.getElementById('imagePreview');
+                                    const prediction = await model.predict(image, false);
+                                    for (let i = 0; i < maxPredictions; i++) {
+                                        const classPrediction =
+                                            prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
+                                        labelContainer.childNodes[i].innerHTML = classPrediction;
+                                    }
+                                }
+                            </script>
+
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+                            <script type="text/javascript">
+                                function readURL(input) {
+                                    if (input.files && input.files[0]) {
+                                        var reader = new FileReader();
+                                        reader.onload = function(e) {
+                                            $('#imagePreview').attr('src', e.target.result);
+                                            // $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                                            $('#imagePreview').hide();
+                                            $('#imagePreview').fadeIn(650);
+                                        };
+                                        reader.readAsDataURL(input.files[0]);
+                                        init().then(() => {
+                                            predict();
+                                        });
+                                    }
+                                }
+                                $('#imageUpload').change(function() {
+                                    readURL(this);
+                                });
+                            </script>
+                        </div>
+                    </div>
         </div>
         <div class="tab-pane fade" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
           <!-- Show in form tap -->

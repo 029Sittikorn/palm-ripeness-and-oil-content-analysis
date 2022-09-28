@@ -235,7 +235,7 @@ if (isset($_REQUEST['delete'])) {
                             }
                         </script>
 
-                        <div class="col-12 col-lg-5 p-lg-5 ">
+                        <div class="col-12 col-lg-5 pt-lg-2 ">
 
 
 
@@ -315,38 +315,11 @@ if (isset($_REQUEST['delete'])) {
                                     readURL(this);
                                 });
                             </script>
-
-                            <!-- <div class="bartext1 d-flex justify-content-between">
-                                <p>Ripeness</p>
-                                <p class="text-right">F</p>
-                            </div>
-                            <div class="progress" style="height: 25px;">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 20%; background-color:#000000;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                    F</div>
-                                <div class="progress-bar " role="progressbar" style="width: 20%; background-color:#000000;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                    D</div>
-                                <div class="progress-bar" role="progressbar" style="width: 20%; background-color:#3e0001;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">C</div>
-                                <div class="progress-bar" role="progressbar" style="width: 20%; background-color:#7c0000;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">B</div>
-                                <div class="progress-bar" role="progressbar" style="width: 20%; background-color:#ba0001;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">A</div>
-                            </div>
-                            <div class="bartext2 d-flex justify-content-between mt-4">
-                                <p>Oil content</p>
-                                <p class="text-right">15.05%</p>
-                            </div>
-                            <div class="progress" style="height: 25px;">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 15.05%;" aria-valuenow="15.05" aria-valuemin="0" aria-valuemax="100">
-                                    15.05%</div>
-                            </div> -->
-                            <center>
-
-                                <button type="button" class="btn btn-outline-primary mt-4 mb-2">
-                                    <img src="img/thought.png" style="width: 20px; " class="me-2">เพิ่มฐานความรู้</button>
-                            </center>
-
                         </div>
-                        <div class="col-12 mt-5">
-                        <iframe style="max-width: 600px;" class="w-100" src="https://drive.google.com/embeddedfolderview?id=1l5FeAKIUplaP862aO7Vsp5ftHj_Bjpif#list" height="335" frameborder="0">
-                        </iframe>
+                        <div class="col-12 mt-2 pt-2">
+                            <h3>เลือกโฟลเดอร์เพื่อบันทึกลงในฐานความรู้</h3>
+                            <iframe style="max-width: 600px;" class="w-100" src="https://drive.google.com/embeddedfolderview?id=1l5FeAKIUplaP862aO7Vsp5ftHj_Bjpif#list" height="335" frameborder="0">
+                            </iframe>
                         </div>
                     </div>
 

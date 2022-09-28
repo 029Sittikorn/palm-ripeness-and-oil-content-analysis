@@ -52,7 +52,7 @@
         <div class="row mt-3 align-items-center" id="slide" style="text-align: center; height: 642px;">
           <div class="col-lg-6 col-12 pt-3">
             <img src="img/โลโก้.png" alt="" style="width: 100px;" class="">
-            <h1 class="card-title">ระบบวิเคราะห์ความสุก <br> ของผลปาล์มน้ำมัน</h3>
+            <h1 class="card-title"><b>ระบบวิเคราะห์ความสุก <br> ของผลปาล์มน้ำมัน</b></h1>
               <p class="card-text">นี่คือเครื่องมือที่ช่วยผู้เชี่ยวชาญในการประเมินความสุก และบันทึกรายการซื้อปาล์ม!
               </p>
                 <center>
@@ -61,10 +61,28 @@
                   </div>
                 </center> 
           </div>
-          <div class="col-lg-6 col-12 mt-5 mb-5"><img data-tilt data-tilt-scale="1.1" src="img/Picture1.png"
-              class="img-fluid" alt="Responsive image">
+          <div class="col-lg-6 col-12 mt-5 mb-5">
+            <img data-tilt data-tilt-scale="1.1" src="img/Picture1.png" class="img-fluid" alt="Responsive image">
+            <script src="vanilla-tilt.min.js"></script>
           </div>
-          <script src="vanilla-tilt.min.js"></script>
+        </div>
+        <div class="row mt-3 align-items-center" id="slide" style="text-align: center; height: 642px;">
+          <div class="col-lg-6 col-12 pt-3">
+            <img src="img/Picture1.png" class="img-fluid" alt="Responsive image">
+          </div>
+          <div class="col-lg-6 col-12 mt-5 mb-5">
+            <h2 class="card-title"><b>รู้ผลการวิเคราะห์ความสุกในไม่กี่คลิก !</b></h2>
+            <p class="card-text">เลือกรูปภาพที่คุณต้องการ จากนั้นระบบจะประมวลผลภาพโดยอัตโนมัติ <br> <br> เท่านี้คุณก็สามารถทราบผลการวิเคราะห์เพื่อใช้ในการกรอกฟอร์มซื้อปาล์มได้แล้ว</p>
+          </div>
+        </div>
+        <div class="row mt-3 align-items-center" id="slide" style="text-align: center; height: 642px;">
+          <div class="col-lg-6 col-12 pt-3">
+            <img src="img/Picture1.png" class="img-fluid" alt="Responsive image">
+          </div>
+          <div class="col-lg-6 col-12 mt-5 mb-5">
+            <h2 class="card-title"><b>บันทึกฟอร์มซื้อปาล์มอย่างง่ายดาย</b></h2>
+            <p class="card-text">เมื่อทราบผลการวิเคราะห์แล้ว หากต้องการบันทึกฟอร์มซื้อปาล์มก็สามารถทำได้เลย<br><br> เพียงกรอกข้อมูลลงไปในฟอร์มแล้วกดบันทึก ข้อมูลเหล่านั้นก็จะจัดเก็บลงในฐานข้อมูลให้อัตโนมัติ</p>
+          </div>
         </div>
       </div>
     </div>
