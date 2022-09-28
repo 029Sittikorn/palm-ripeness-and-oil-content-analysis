@@ -129,20 +129,32 @@ if (isset($_POST['insert'])) {
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active mt-4 mb-4" id="pills-result" role="tabpanel" aria-labelledby="pills-result-tab" style="max-width: 1110px;  margin-left: auto; margin-right: auto;">
           <!-- Show in result tap -->
-          <div class="col-lg-6 col-12 rounded overflow-hidden">
-            <img src="img/S__16187531.png" class="img-fluid" alt="Responsive image">
-            <center>
-      <div class="d-flex justify-content-center mt-4">
-        <input id="image-btn" type="file" hidden />
-        <button onclick="imageBtnActive()" id="custom1-btn" style="margin: 20px 0px;width: 170px; display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;">อัพโหลดรูปภาพ</button>
-      </div>
-      <script>
+          
+          <div class="col-lg-6 col-12 rounded overflow-hidden "><center>
+            <img src="img/S__16187531.png" id="output" style="border:2px dashed #0d6efd  ; border-radius: 10px;" class="img-fluid" alt="Responsive image">
+            
+     <!--  <div class="d-flex justify-content-center mt-4 imagePreview">
+        <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;" />
+        <button for="file" style="margin: 20px 0px;width: 170px; display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;">อัพโหลดรูปภาพ</button>
+      </div> -->
+      <!-- <script>
         const imageBtn = document.querySelector("#image-btn");
         const customBtn1 = document.querySelector("#custom1-btn");
         function imageBtnActive() {
           imageBtn.click();
         }
-      </script>
+      </script> -->
+
+<p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+<p><label for="file" style="cursor: pointer;width: 170px;margin: 30px 0px; display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;">อัพโหลดรูปภาพ</label></p>
+<p><img id="output" width="200" /></p>
+
+<script>
+var loadFile = function(event) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};
+</script>
     </center>
           </div>
           <div class="col-lg-6 col-12 centerver shadow rounded" style="max-width: 550px; background-color: white;">
