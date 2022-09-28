@@ -38,9 +38,9 @@
           <div class="collapse navbar-collapse " id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item" style="margin-right: 0;">
-                <a href="adminLogin.php" type="button" class="btn btn-outline-primary"
-                    class="text-decoration-none"><i class="fa-solid fa-lock"></i> สำหรับแอดมิน</a>
-                    
+                <a href="adminLogin.php" type="button" class="btn btn-outline-primary" class="text-decoration-none">
+                  <i class="fa-solid fa-lock"></i> สำหรับแอดมิน
+                </a>
               </li>
             </ul>
           </div>
@@ -68,7 +68,9 @@
         </div>
         <div class="row mt-3 align-items-center" id="slide" style="text-align: center; height: 642px;">
           <div class="col-lg-6 col-12 pt-3">
-            <img src="img/Picture1.png" class="img-fluid" alt="Responsive image">
+            <video class="w-100 shadow rounded" autoplay loop muted>
+              <source src="img/คลิปปาล์ม1.mp4" type="video/mp4" />
+            </video>
           </div>
           <div class="col-lg-6 col-12 mt-5 mb-5">
             <h2 class="card-title"><b>รู้ผลการวิเคราะห์ความสุกในไม่กี่คลิก !</b></h2>
@@ -77,7 +79,9 @@
         </div>
         <div class="row mt-3 align-items-center" id="slide" style="text-align: center; height: 642px;">
           <div class="col-lg-6 col-12 pt-3">
-            <img src="img/Picture1.png" class="img-fluid" alt="Responsive image">
+            <video class="w-100 shadow rounded" autoplay loop muted>
+              <source src="img/คลิปปาล์ม2.mp4" type="video/mp4" />
+            </video>
           </div>
           <div class="col-lg-6 col-12 mt-5 mb-5">
             <h2 class="card-title"><b>บันทึกฟอร์มซื้อปาล์มอย่างง่ายดาย</b></h2>

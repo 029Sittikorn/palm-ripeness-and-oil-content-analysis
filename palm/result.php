@@ -126,38 +126,35 @@ if (isset($_POST['insert'])) {
         <div class="tab-pane fade show active mt-4 mb-4" id="pills-result" role="tabpanel" aria-labelledby="pills-result-tab" style="max-width: 1110px;  margin-left: auto; margin-right: auto;">
           <!-- Show in result tap -->
           <div class="mt-3 container" style="display: grid;height: 100%;place-items: center;text-align: center;">
-                        <div style="height: 400px; max-width: 600px;" class="imagePreview w-100">
-                            <div style="position: relative; height: 350px;width: 100%;border: 2px dashed #0d6efd;border-radius: 10px;display: flex;align-items: center;justify-content: center;overflow: hidden;" class="wrapper mt-3 mb-3">
-                                <div style=" position: absolute;height: 100%; width: 100%;display: flex;align-items: center;justify-content: center;">
-                                    <img style="width: 100%;height: 100%;object-fit: cover;" id="imagePreview">
-                                </div>
-                                <div class="content">
-                                    <div style="font-size: 100px;color: #0d6efd;"><i class="fas fa-cloud-upload-alt"></i></div>
-                                    <div style="font-size: 30px;font-weight: 400;color: #0d6efd;">ไม่ได้เลือกไฟล์ใด</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="max-width: 600px;" class="imagePreview w-100">
-                            <input id="imageUpload" type="file" hidden />
-                            <button onclick="imageuploadActive()" id="custom-btn" style="width: 100%;display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;">เลือกไฟล์</button>
-                        </div>
-
-                        <script>
-                            const imageupload = document.querySelector("#imageUpload");
-                            const customBtn = document.querySelector("#custom-btn");
-
-                            function imageuploadActive() {
-                                imageupload.click();
-                            }
-                        </script>
-                        <div class="col-12 col-lg-5 pt-lg-5">
-                            <div id="label-container"></div>
-                            <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-                            <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-
-                            <script type="text/javascript">
-                                const URL = 'https://teachablemachine.withgoogle.com/models/DycO8K5Gg/';
-                                let model, webcam, labelContainer, maxPredictions;
+            <div style="height: 400px; max-width: 600px;" class="imagePreview w-100">
+              <div style="position: relative; height: 350px;width: 100%;border: 2px dashed #0d6efd;border-radius: 10px;display: flex;align-items: center;justify-content: center;overflow: hidden;" class="wrapper mt-3 mb-3">
+                <div style=" position: absolute;height: 100%; width: 100%;display: flex;align-items: center;justify-content: center;">
+                  <img style="width: 100%;height: 100%;object-fit: cover;" id="imagePreview">
+                </div>
+                <div class="content">
+                  <div style="font-size: 100px;color: #0d6efd;"><i class="fas fa-cloud-upload-alt"></i></div>
+                  <div style="font-size: 30px;font-weight: 400;color: #0d6efd;">ไม่ได้เลือกไฟล์ใด</div>
+                </div>
+              </div>
+            </div>
+            <div style="max-width: 600px;" class="imagePreview w-100">
+              <input id="imageUpload" type="file" hidden />
+                  <button onclick="imageuploadActive()" id="custom-btn" style="width: 100%;display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;">เลือกไฟล์</button>
+            </div>
+            <script>
+              const imageupload = document.querySelector("#imageUpload");
+              const customBtn = document.querySelector("#custom-btn");
+              function imageuploadActive() {
+                imageupload.click();
+              }
+            </script>
+            <div class="col-12 col-lg-5 pt-lg-5">
+              <div id="label-container"></div>
+                <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+                <script type="text/javascript">
+                const URL = 'https://teachablemachine.withgoogle.com/models/DycO8K5Gg/';
+                let model, webcam, labelContainer, maxPredictions;
                                 // Load the image model 
                                 async function init() {
                                     const modelURL = URL + 'model.json';
@@ -231,7 +228,6 @@ if (isset($_POST['insert'])) {
               <?php if (isset($_SESSION['err_fill'])) : ?>
                 <div class="alert alert-danger alert-custom" role="alert">
                   <?php echo $_SESSION['err_fill']; ?>
-
                 </div>
               <?php endif; ?>
               
@@ -343,8 +339,8 @@ if (isset($_POST['insert'])) {
                   <div class="form-group mt-4">
                     <button type="submit" name="insert" class="btn btn-primary me-lg-3 mb-4 form-control" data-bs-toggle="modal"><img src="img/save.png" style="width: 20px;" class="me-2">บันทึกลงในฐานข้อมูล</button>
                   </div>
+                </form>
               </div>
-              </form>
             </div>
           </div>
         </div>
