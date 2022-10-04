@@ -50,7 +50,7 @@ if (isset($_REQUEST['delete'])) {
         <div class="container-fluid shadow">
             <div class="container ">
                 <nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
-                    <a class="navbar-brand mt-1" href="" style="font-size: 28px; font-family: 'Reem Kufi Fun', sans-serif; ">
+                    <a class="navbar-brand mt-1" href="adminDashboard.php" style="font-size: 28px; font-family: 'Reem Kufi Fun', sans-serif; ">
                         <img src="img/โลโก้.png" alt="" style="max-height: 50px; " class="me-3">
                         <span class="d-none d-md-inline">OIL PALM RIPENESS ANALYZER</span>
                     </a>

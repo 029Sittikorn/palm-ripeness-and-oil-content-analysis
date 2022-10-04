@@ -115,7 +115,7 @@ if (isset($_POST['insert'])) {
     <div class="container p-4 shadow mt-4" style="background-image: url('img/Palm sunday greetings instagram stories.png'); background-repeat: no-repeat; background-position: center top; background-size: cover;">
       <ul class="nav nav-pills" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="pills-result-tab" data-bs-toggle="pill" data-bs-target="#pills-result" type="button" role="tab" aria-controls="pills-result" aria-selected="true">ผลการวิเคราะห์
+          <button class="nav-link active" id="pills-result-tab" data-bs-toggle="pill" data-bs-target="#pills-result" type="button" role="tab" aria-controls="pills-result" aria-selected="true">การวิเคราะห์ความสุก
           </button>
         </li>
         <li class="nav-item" role="presentation">
@@ -153,7 +153,7 @@ if (isset($_POST['insert'])) {
                 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
                 <script type="text/javascript">
-                const URL = 'https://teachablemachine.withgoogle.com/models/DycO8K5Gg/';
+                const URL = 'https://teachablemachine.withgoogle.com/models/54TEQXrrH/';
                 let model, webcam, labelContainer, maxPredictions;
                                 // Load the image model 
                                 async function init() {
