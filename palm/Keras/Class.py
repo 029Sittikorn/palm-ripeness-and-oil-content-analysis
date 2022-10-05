@@ -9,7 +9,7 @@ import cv2
 
 np.set_printoptions(suppress=False)
 # Load the model
-model = tensorflow.keras.models.load_model('keras_model.h5')
+model = tensorflow.keras.models.load_model('palm\Keras\keras_model.h5')
 data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 # Replace this with the path to your image
 img = cv2.imread('img_test\IMG_20220301_111026.jpg')
