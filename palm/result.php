@@ -191,10 +191,11 @@ if (isset($_POST['insert'])) {
                   for (let i = 0; i < maxPredictions; i++) {
 
                     const classLabel = prediction[i].className;
+                    const classLabel2 = 'เกรด ' + prediction[i].className;
                     const classPrediction = prediction[i].probability.toFixed(2);
 
                     if (classPrediction > 0.7) {
-                      document.getElementById("test").innerHTML = classLabel + classPrediction;
+                      document.getElementById("test").innerHTML = classLabel2;
                       document.getElementById("test1").value = classLabel;
                     }
 
@@ -211,7 +212,13 @@ if (isset($_POST['insert'])) {
                   }
                 }
               </script>
-              <div>Grade : <span id= "test"></span></div>
+
+              <div class="container shadow rounded">
+                <div class="">
+                  <h3>ผลการวิเคราะห์</้>
+                </div>
+                <span id= "test"></span>
+              </div>
 
               <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
               <script type="text/javascript">

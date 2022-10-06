@@ -42,7 +42,7 @@ if (isset($_REQUEST['delete'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap" rel="stylesheet">
-    
+
 </head>
 
 <body style="font-family: 'Noto Sans Thai', sans-serif;">
@@ -89,22 +89,22 @@ if (isset($_REQUEST['delete'])) {
                         <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
                             ตารางจัดการรายการซื้อปาล์ม
                         </h3>
-                            <center >
-                                <form action="adminDashboardsearch.php" method="post" style=" max-width: 350px;" class="">
-                                    <div class="form-group">
-                                        <div class="mt-3">
-                                            <input type="text" class="form-control" id="inputPassword" name="search" placeholder="ค้นหาใน รายการซื้อปาล์ม:">
-                                        </div>
-                                        <select id="inputState" class="form-select mt-2" name="column">
-                                            <option value="uname">ชื่อเจ้าของปาล์ม</option>
-                                            <option value="avg_level">ความสุกโดยเฉลี่ย</option>
-                                            <option value="date">วันที่</option>
-                                        </select>
-                                        <button type="submit" class="btn btn-primary mt-2"><i class="fa-solid fa-magnifying-glass"></i> ค้นหา</button>
+                        <center>
+                            <form action="adminDashboardsearch.php" method="post" style=" max-width: 350px;" class="">
+                                <div class="form-group">
+                                    <div class="mt-3">
+                                        <input type="text" class="form-control" id="inputPassword" name="search" placeholder="ค้นหาใน รายการซื้อปาล์ม:">
                                     </div>
-                                </form>
-                            </center>
-                                
+                                    <select id="inputState" class="form-select mt-2" name="column">
+                                        <option value="uname">ชื่อเจ้าของปาล์ม</option>
+                                        <option value="avg_level">ความสุกโดยเฉลี่ย</option>
+                                        <option value="date">วันที่</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-primary mt-2"><i class="fa-solid fa-magnifying-glass"></i> ค้นหา</button>
+                                </div>
+                            </form>
+                        </center>
+
 
                         <div class="container mt-3 text-center table-responsive">
                             <table class="table table-striped table-bordered ">
@@ -253,26 +253,33 @@ if (isset($_REQUEST['delete'])) {
                                     maxPredictions = model.getTotalClasses();
                                     labelContainer = document.getElementById('label-container');
                                     for (let i = 0; i < maxPredictions; i++) {
-                                        labelContainer.appendChild(document.createElement('div'));
+                                        labelContainer.appendChild(document.createElement('inline'));
                                     }
                                 }
                                 async function predict() {
                                     var image = document.getElementById('imagePreview');
                                     const prediction = await model.predict(image, false);
                                     for (let i = 0; i < maxPredictions; i++) {
-                                        const classPrediction =
-                                            prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
-                                        labelContainer.childNodes[i].innerHTML = classPrediction;
+                                        const classLabel = prediction[i].className;
+                                        const classPrediction = prediction[i].probability.toFixed(2);
+
+                                        if (classPrediction > 0.7) {
+                                            document.getElementById("test").innerHTML = classLabel;
+                                            document.getElementById("test1").value = classLabel;
+                                        }
                                     }
                                 }
                             </script>
+                           
                             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
                             <script type="text/javascript">
                                 function readURL(input) {
                                     if (input.files && input.files[0]) {
                                         var reader = new FileReader();
                                         reader.onload = function(e) {
-                                            $('#imagePreview').attr('src', e.target.result); $('#imagePreview').hide(); $('#imagePreview').fadeIn(650);
+                                            $('#imagePreview').attr('src', e.target.result);
+                                            $('#imagePreview').hide();
+                                            $('#imagePreview').fadeIn(650);
                                         };
                                         reader.readAsDataURL(input.files[0]);
                                         init().then(() => {
@@ -285,11 +292,22 @@ if (isset($_REQUEST['delete'])) {
                                 });
                             </script>
                         </div>
-                        <div class="col-12 mt-2 pt-2">
+
+                        <form action="">
+
+                        </form>
+                        <div style="max-width: 600px;" class="imagePreview w-100">
+                            <input id="imageUpload" type="file" hidden />
+                            <button id="custom-btn" style="margin: 5px 0px;width: 100%;display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;">บันทึก</button>
+                        </div>
+                        <div>Grade : <span  id="test"></span></div>
+
+                        <!-- <div class="col-12 mt-2 pt-2">
                             <h3>เลือกโฟลเดอร์เพื่อบันทึกลงในฐานความรู้</h3>
                             <iframe style="max-width: 600px;" class="w-100" src="https://drive.google.com/embeddedfolderview?id=1l5FeAKIUplaP862aO7Vsp5ftHj_Bjpif#list" height="335" frameborder="0">
                             </iframe>
-                        </div>
+                        </div> -->
+                        
                     </div>
 
                 </div>
@@ -303,27 +321,29 @@ if (isset($_REQUEST['delete'])) {
             <div class="container">
                 <footer class="text-center text-white">
                     <div class="container p-4">
-                    <section class="mb-2">
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                        <img src="img/facebook-app-symbol.png" alt="" style="width: 20px;" class="">
-                    </a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                        <img src="img/twitter.png" alt="" style="width: 20px;" class="">
-                    </a>
-                    </section>
-                    <section class="mb-4">
-                    <button type="button" class="btn btn-outline-light " id="google_translate_element">
-                    </button>
-                    <script type="text/javascript">
-                    function googleTranslateElementInit() {
-                        new google.translate.TranslateElement({pageLanguage: 'th'}, 'google_translate_element');
-                    }
-                    </script>
-                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-                    </section>
+                        <section class="mb-2">
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                                <img src="img/facebook-app-symbol.png" alt="" style="width: 20px;" class="">
+                            </a>
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                                <img src="img/twitter.png" alt="" style="width: 20px;" class="">
+                            </a>
+                        </section>
+                        <section class="mb-4">
+                            <button type="button" class="btn btn-outline-light " id="google_translate_element">
+                            </button>
+                            <script type="text/javascript">
+                                function googleTranslateElementInit() {
+                                    new google.translate.TranslateElement({
+                                        pageLanguage: 'th'
+                                    }, 'google_translate_element');
+                                }
+                            </script>
+                            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                        </section>
                         <section class="mb-2">
                             <p>
-                            เราคาดว่าจะได้รับระบบสำหรับประเมินความสุกของปาล์มน้ำมันโดยการประมวลผลภาพในรูปแบบเว็บไซต์
+                                เราคาดว่าจะได้รับระบบสำหรับประเมินความสุกของปาล์มน้ำมันโดยการประมวลผลภาพในรูปแบบเว็บไซต์
                             </p>
                         </section>
                     </div>
@@ -348,7 +368,7 @@ if (isset($_REQUEST['delete'])) {
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    
+
 </body>
 
 </html>
