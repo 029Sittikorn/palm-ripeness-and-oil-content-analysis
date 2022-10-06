@@ -197,39 +197,54 @@ if (isset($_POST['insert'])) {
                     if (classPrediction > 0.7) {
                       document.getElementById("test").innerHTML = classLabel2;
                       document.getElementById("test1").value = classLabel;
+                      if('A'== classLabel ){
+                    const boxes = document.querySelectorAll('.bar1');
+                    boxes.forEach(bar1 => {
+                      bar1.style.width = '100%';
+                      bar1.style.backgroundColor = '#AA0000';
+                    });}
+                    if('B' == classLabel){
+                    const boxes = document.querySelectorAll('.bar1');
+                    boxes.forEach(bar1 => {
+                      bar1.style.width = '75%';
+                      bar1.style.backgroundColor = '#6A0000';
+                    });}
+                    if( 'C'== classLabel){
+                    const boxes = document.querySelectorAll('.bar1');
+                    boxes.forEach(bar1 => {
+                      bar1.style.width = '50%';
+                      bar1.style.backgroundColor = '#380001';
+                    });}
+                    if( 'D' ==classLabel){
+                    const boxes = document.querySelectorAll('.bar1');
+                    boxes.forEach(bar1 => {
+                      bar1.style.width = '25%';
+                      bar1.style.backgroundColor = '#000000';
+                    });}
                     }
-
-
-
-
-                    /* if(classPrediction < 0.5){
-                      
-                    }else{
-                      classPrediction = '| ' + prediction[i].className +' : '+prediction[i].probability.toFixed(2) ;
-                      labelContainer.childNodes[i].innerHTML = classPrediction;
-                    } */
-
+                    
                   }
                 }
+                
               </script>
 
-              <div class="container shadow rounded">
+              <div class="container shadow rounded" style="height: 120px;">
                 <div class="">
                   <h3>ผลการวิเคราะห์</h3>
                   <div class="progress">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">D</div>
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">C</div>
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">B</div>
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">A</div>
+                    <div class="progress-bar" role="progressbar" style="width: 25%;background-Color:#000000;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">D</div>
+                    <div class="progress-bar" role="progressbar" style="width: 25%;background-Color:#380001;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">C</div>
+                    <div class="progress-bar" role="progressbar" style="width: 25%;background-Color:#6A0000;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">B</div>
+                    <div class="progress-bar" role="progressbar" style="width: 25%;background-Color:#AA0000;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">A</div>
                   </div>
-                  <div class="pt-2">
+                  <div class="pt-2 pb-2">
                     <div class="progress" style="height: 10px;">
-                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bar1" role="progressbar" style="width: 0.2%;background-Color:#000000;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                   </div>
                   
                 </div>
-                <span id= "test"></span>
+                <span id= "test">กรุณาเลือกไฟล์</span>
               </div>
 
               <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -386,14 +401,6 @@ if (isset($_POST['insert'])) {
       <div class="container">
         <footer class="text-center text-white">
           <div class="container p-4">
-            <section class="mb-2">
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                <img src="img/facebook-app-symbol.png" alt="" style="width: 20px;" class="">
-              </a>
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                <img src="img/twitter.png" alt="" style="width: 20px;" class="">
-              </a>
-            </section>
             <section class="mb-4">
               <button type="button" class="btn btn-outline-light " id="google_translate_element">
               </button>

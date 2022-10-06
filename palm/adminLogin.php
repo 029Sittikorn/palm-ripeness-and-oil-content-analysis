@@ -66,14 +66,6 @@
             <div class="container">
                 <footer class="text-center text-white">
                     <div class="container p-4">
-                    <section class="mb-2">
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                        <img src="img/facebook-app-symbol.png" alt="" style="width: 20px;" class="">
-                    </a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                        <img src="img/twitter.png" alt="" style="width: 20px;" class="">
-                    </a>
-                    </section>
                     <section class="mb-4">
                     <button type="button" class="btn btn-outline-light " id="google_translate_element">
                     </button>
