@@ -231,7 +231,7 @@ if (isset($_POST['insert'])) {
                 }
               </script>
 
-              <div class="container shadow rounded" style="height: 140px;">
+              <div class="container shadow rounded bg-white" style="height: 140px;">
                 <div class="mt-2">
                   <h3 class="pt-2">ผลการวิเคราะห์</h3>
                   <div class="progress">

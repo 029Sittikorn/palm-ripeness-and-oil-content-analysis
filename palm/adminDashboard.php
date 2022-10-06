@@ -68,7 +68,7 @@ if (isset($_REQUEST['delete'])) {
                 </nav>
             </div>
         </div>
-        <div class="container p-4 shadow  mt-4">
+        <div class="container p-4 shadow mt-4" style="background-image: url('img/Palm sunday greetings instagram stories.png'); background-repeat: no-repeat; background-position: center top; background-size: cover;">
             <ul class="nav nav-pills" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button" role="tab" aria-controls="pills-form" aria-selected="false">รายการซื้อปาล์ม
@@ -323,7 +323,7 @@ if (isset($_REQUEST['delete'])) {
                                     readURL(this);
                                 });
                             </script>
-                            <div class="container shadow rounded" style="height: 140px;">
+                            <div class="container shadow rounded bg-white" style="height: 140px;">
                                 <div class="mt-2">
                                     <h3 class="pt-2">ผลการวิเคราะห์</h3>
                                     <div class="progress">
@@ -343,11 +343,11 @@ if (isset($_REQUEST['delete'])) {
                             </div>
                         </div>
 
-                        <!-- <div class="col-12 mt-2 pt-2">
+                        <div class="col-12 mt-4 pt-2 bg-white rounded" style=" max-width: 600px;">
                             <h3>เลือกโฟลเดอร์เพื่อบันทึกลงในฐานความรู้</h3>
                             <iframe style="max-width: 600px;" class="w-100" src="https://drive.google.com/embeddedfolderview?id=1l5FeAKIUplaP862aO7Vsp5ftHj_Bjpif#list" height="335" frameborder="0">
                             </iframe>
-                        </div> -->
+                        </div>
 
                     </div>
 
