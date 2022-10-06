@@ -215,7 +215,19 @@ if (isset($_POST['insert'])) {
 
               <div class="container shadow rounded">
                 <div class="">
-                  <h3>ผลการวิเคราะห์</้>
+                  <h3>ผลการวิเคราะห์</h3>
+                  <div class="progress">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">D</div>
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">C</div>
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">B</div>
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">A</div>
+                  </div>
+                  <div class="pt-2">
+                    <div class="progress" style="height: 10px;">
+                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  </div>
+                  
                 </div>
                 <span id= "test"></span>
               </div>
