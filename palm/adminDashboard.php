@@ -222,9 +222,13 @@ if (isset($_REQUEST['delete'])) {
                         </div>
 
                         <div style="max-width: 600px;" class="imagePreview w-100">
+                        <form action="POST">
                             <input id="imageUpload" type="file" hidden />
-                            <button onclick="imageuploadActive()" id="custom-btn" style="margin: 20px 0px;width: 100%;display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;">เลือกไฟล์</button>
-                        </div>
+                        </form>
+                            
+                            <button onclick="imageuploadActive()" id="custom-btn" style="margin-bottom: 20px;width: 100%;display: block;border: none;padding: 10px 20px;border-radius: 10px;color: white; background:#0d6efd;">เลือกไฟล์</button>
+                       
+                             </div>
 
                         <script>
                             const imageupload = document.querySelector("#imageUpload");
@@ -266,35 +270,39 @@ if (isset($_REQUEST['delete'])) {
 
                                         if (classPrediction > 0.7) {
                                             document.getElementById("test").innerHTML = classLabel2;
-                                            if('A'== classLabel ){
-                    const boxes = document.querySelectorAll('.bar1');
-                    boxes.forEach(bar1 => {
-                      bar1.style.width = '100%';
-                      bar1.style.backgroundColor = '#AA0000';
-                    });}
-                    if('B' == classLabel){
-                    const boxes = document.querySelectorAll('.bar1');
-                    boxes.forEach(bar1 => {
-                      bar1.style.width = '75%';
-                      bar1.style.backgroundColor = '#6A0000';
-                    });}
-                    if( 'C'== classLabel){
-                    const boxes = document.querySelectorAll('.bar1');
-                    boxes.forEach(bar1 => {
-                      bar1.style.width = '50%';
-                      bar1.style.backgroundColor = '#380001';
-                    });}
-                    if( 'D' ==classLabel){
-                    const boxes = document.querySelectorAll('.bar1');
-                    boxes.forEach(bar1 => {
-                      bar1.style.width = '25%';
-                      bar1.style.backgroundColor = '#000000';
-                    });}
+                                            if ('A' == classLabel) {
+                                                const boxes = document.querySelectorAll('.bar1');
+                                                boxes.forEach(bar1 => {
+                                                    bar1.style.width = '100%';
+                                                    bar1.style.backgroundColor = '#AA0000';
+                                                });
+                                            }
+                                            if ('B' == classLabel) {
+                                                const boxes = document.querySelectorAll('.bar1');
+                                                boxes.forEach(bar1 => {
+                                                    bar1.style.width = '75%';
+                                                    bar1.style.backgroundColor = '#6A0000';
+                                                });
+                                            }
+                                            if ('C' == classLabel) {
+                                                const boxes = document.querySelectorAll('.bar1');
+                                                boxes.forEach(bar1 => {
+                                                    bar1.style.width = '50%';
+                                                    bar1.style.backgroundColor = '#380001';
+                                                });
+                                            }
+                                            if ('D' == classLabel) {
+                                                const boxes = document.querySelectorAll('.bar1');
+                                                boxes.forEach(bar1 => {
+                                                    bar1.style.width = '25%';
+                                                    bar1.style.backgroundColor = '#000000';
+                                                });
+                                            }
                                         }
                                     }
                                 }
                             </script>
-                           
+
                             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
                             <script type="text/javascript">
                                 function readURL(input) {
@@ -315,24 +323,24 @@ if (isset($_REQUEST['delete'])) {
                                     readURL(this);
                                 });
                             </script>
-                            <div class="container shadow rounded" style="height: 120px;">
-                <div class="">
-                  <h3>ผลการวิเคราะห์</h3>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;background-Color:#000000;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">D</div>
-                    <div class="progress-bar" role="progressbar" style="width: 25%;background-Color:#380001;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">C</div>
-                    <div class="progress-bar" role="progressbar" style="width: 25%;background-Color:#6A0000;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">B</div>
-                    <div class="progress-bar" role="progressbar" style="width: 25%;background-Color:#AA0000;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">A</div>
-                  </div>
-                  <div class="pt-2 pb-2">
-                    <div class="progress" style="height: 10px;">
-                    <div class="progress-bar bar1" role="progressbar" style="width: 0.2%;background-Color:#000000;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  </div>
-                  
-                </div>
-                <span id= "test">กรุณาเลือกไฟล์</span>
-              </div>
+                            <div class="container shadow rounded" style="height: 140px;">
+                                <div class="mt-2">
+                                    <h3 class="pt-2">ผลการวิเคราะห์</h3>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%;background-Color:#000000;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">D</div>
+                                        <div class="progress-bar" role="progressbar" style="width: 25%;background-Color:#380001;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">C</div>
+                                        <div class="progress-bar" role="progressbar" style="width: 25%;background-Color:#6A0000;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">B</div>
+                                        <div class="progress-bar" role="progressbar" style="width: 25%;background-Color:#AA0000;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">A</div>
+                                    </div>
+                                    <div class="pt-3 pb-2">
+                                        <div class="progress" style="height: 15px;">
+                                            <div class="progress-bar bar1 progress-bar-striped progress-bar-animated " role="progressbar" style="width: 0.2%;background-Color:#000000;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <span id="test">กรุณาเลือกไฟล์</span>
+                            </div>
                         </div>
 
                         <!-- <div class="col-12 mt-2 pt-2">
@@ -340,7 +348,7 @@ if (isset($_REQUEST['delete'])) {
                             <iframe style="max-width: 600px;" class="w-100" src="https://drive.google.com/embeddedfolderview?id=1l5FeAKIUplaP862aO7Vsp5ftHj_Bjpif#list" height="335" frameborder="0">
                             </iframe>
                         </div> -->
-                        
+
                     </div>
 
                 </div>

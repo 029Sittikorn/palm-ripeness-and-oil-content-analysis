@@ -195,56 +195,59 @@ if (isset($_POST['insert'])) {
                     const classPrediction = prediction[i].probability.toFixed(2);
 
                     if (classPrediction > 0.7) {
-                      document.getElementById("test").innerHTML = classLabel2;
+                      document.getElementById("grade").innerHTML = classLabel2;
                       document.getElementById("test1").value = classLabel;
-                      if('A'== classLabel ){
-                    const boxes = document.querySelectorAll('.bar1');
-                    boxes.forEach(bar1 => {
-                      bar1.style.width = '100%';
-                      bar1.style.backgroundColor = '#AA0000';
-                    });}
-                    if('B' == classLabel){
-                    const boxes = document.querySelectorAll('.bar1');
-                    boxes.forEach(bar1 => {
-                      bar1.style.width = '75%';
-                      bar1.style.backgroundColor = '#6A0000';
-                    });}
-                    if( 'C'== classLabel){
-                    const boxes = document.querySelectorAll('.bar1');
-                    boxes.forEach(bar1 => {
-                      bar1.style.width = '50%';
-                      bar1.style.backgroundColor = '#380001';
-                    });}
-                    if( 'D' ==classLabel){
-                    const boxes = document.querySelectorAll('.bar1');
-                    boxes.forEach(bar1 => {
-                      bar1.style.width = '25%';
-                      bar1.style.backgroundColor = '#000000';
-                    });}
+                      if ('A' == classLabel) {
+                        const boxes = document.querySelectorAll('.bar1');
+                        boxes.forEach(bar1 => {
+                          bar1.style.width = '100%';
+                          bar1.style.backgroundColor = '#AA0000';
+                        });
+                      }
+                      if ('B' == classLabel) {
+                        const boxes = document.querySelectorAll('.bar1');
+                        boxes.forEach(bar1 => {
+                          bar1.style.width = '75%';
+                          bar1.style.backgroundColor = '#6A0000';
+                        });
+                      }
+                      if ('C' == classLabel) {
+                        const boxes = document.querySelectorAll('.bar1');
+                        boxes.forEach(bar1 => {
+                          bar1.style.width = '50%';
+                          bar1.style.backgroundColor = '#380001';
+                        });
+                      }
+                      if ('D' == classLabel) {
+                        const boxes = document.querySelectorAll('.bar1');
+                        boxes.forEach(bar1 => {
+                          bar1.style.width = '25%';
+                          bar1.style.backgroundColor = '#000000';
+                        });
+                      }
                     }
-                    
+
                   }
                 }
-                
               </script>
 
-              <div class="container shadow rounded" style="height: 120px;">
-                <div class="">
-                  <h3>ผลการวิเคราะห์</h3>
+              <div class="container shadow rounded" style="height: 140px;">
+                <div class="mt-2">
+                  <h3 class="pt-2">ผลการวิเคราะห์</h3>
                   <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: 25%;background-Color:#000000;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">D</div>
                     <div class="progress-bar" role="progressbar" style="width: 25%;background-Color:#380001;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">C</div>
                     <div class="progress-bar" role="progressbar" style="width: 25%;background-Color:#6A0000;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">B</div>
                     <div class="progress-bar" role="progressbar" style="width: 25%;background-Color:#AA0000;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">A</div>
                   </div>
-                  <div class="pt-2 pb-2">
-                    <div class="progress" style="height: 10px;">
-                    <div class="progress-bar bar1" role="progressbar" style="width: 0.2%;background-Color:#000000;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="pt-3 pb-2">
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bar1 progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0.2%;background-Color:#000000;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                   </div>
-                  </div>
-                  
+
                 </div>
-                <span id= "test">กรุณาเลือกไฟล์</span>
+                <span id="grade">กรุณาเลือกไฟล์</span>
               </div>
 
               <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
