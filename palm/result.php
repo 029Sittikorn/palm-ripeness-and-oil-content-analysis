@@ -87,6 +87,7 @@ if (isset($_POST['insert'])) {
   <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.24/webcam.js"></script>
 </head>
 
 <body style="font-family: 'Noto Sans Thai', sans-serif;">
@@ -114,8 +115,10 @@ if (isset($_POST['insert'])) {
     <div class="container p-4 shadow mt-4" style="background-image: url('img/Palm sunday greetings instagram stories.png'); background-repeat: no-repeat; background-position: center top; background-size: cover;">
       <ul class="nav nav-pills" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="pills-result-tab" data-bs-toggle="pill" data-bs-target="#pills-result" type="button" role="tab" aria-controls="pills-result" aria-selected="true">การวิเคราะห์ความสุก
-          </button>
+          <button class="nav-link active" id="pills-result-tab" data-bs-toggle="pill" data-bs-target="#pills-result" type="button" role="tab" aria-controls="pills-result" aria-selected="true">วิเคราะห์ด้วยกล้อง</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-upload-tab" data-bs-toggle="pill" data-bs-target="#pills-upload" type="button" role="tab" aria-controls="pills-upload" aria-selected="false">วิเคราะห์ด้วยไฟล์</button>
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button" role="tab" aria-controls="pills-form" aria-selected="false">ฟอร์มซื้อปาล์ม</button>
@@ -125,7 +128,52 @@ if (isset($_POST['insert'])) {
         <div class="tab-pane fade show active mt-4 mb-4" id="pills-result" role="tabpanel" aria-labelledby="pills-result-tab" style="max-width: 1110px;  margin-left: auto; margin-right: auto;">
           <!-- Show in result tap -->
           <div class="mt-3 container" style="display: grid;height: 100%;place-items: center;text-align: center;">
-            <div style="height: 400px; max-width: 600px;" class="imagePreview w-100">
+            <div class="container">	
+              <div class="row">
+                <div class="col-lg-12" align="center">
+                  <label>Capture live photo</label>
+                  <div id="my_camera" class="pre_capture_frame" ></div>
+                  <input type="hidden" name="captured_image_data" id="captured_image_data">
+                  <br>
+                  <input type="button" class="btn btn-info btn-round btn-file" value="Take Snapshot" onClick="take_snapshot()">	
+                </div>
+                <div class="col-lg-12" align="center">
+                  <label>Result</label>
+                  <div id="results" >
+                    <img style="height: 287px; width: 351px;" class="after_capture_frame" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png" />
+                  </div>
+                </div>	
+              </div><!--  end row -->
+            </div><!-- end container -->
+            <script language="JavaScript">
+              // Configure a few settings and attach camera 250x187
+              Webcam.set({
+                width: 350,
+                height: 287,
+                image_format: 'jpeg',
+                jpeg_quality: 90
+              });	 
+              Webcam.attach( '#my_camera' );
+              
+              function take_snapshot() {
+              // play sound effect
+              //shutter.play();
+              // take snapshot and get image data
+              Webcam.snap( function(data_uri) {
+              // display results in page
+              document.getElementById('results').innerHTML = 
+                '<img class="after_capture_frame" src="'+data_uri+'"/>';
+              $("#captured_image_data").val(data_uri);
+              });	 
+              }
+            </script>
+            
+          </div>
+        </div>
+        <div class="tab-pane fade show mt-4 mb-4" id="pills-upload" role="tabpanel" aria-labelledby="pills-upload-tab" style="max-width: 1110px;  margin-left: auto; margin-right: auto;">
+          <!-- Show in result tap -->
+          <div class="mt-3 container" style="display: grid;height: 100%;place-items: center;text-align: center;">
+          <div style="height: 400px; max-width: 600px;" class="imagePreview w-100">
               <div style="position: relative; height: 350px;width: 100%;border: 2px dashed #0d6efd;border-radius: 10px;display: flex;align-items: center;justify-content: center;overflow: hidden;" class="wrapper mt-3 mb-3">
                 <div style=" position: absolute;height: 100%; width: 100%;display: flex;align-items: center;justify-content: center;">
                   <img style="width: 100%;height: 100%;object-fit: cover;" id="imagePreview">
@@ -142,7 +190,6 @@ if (isset($_POST['insert'])) {
             </div>
             <script>
               const imageupload = document.querySelector("#imageUpload");
-              const customBtn = document.querySelector("#custom-btn");
 
               function imageuploadActive() {
                 imageupload.click();
@@ -396,6 +443,9 @@ if (isset($_POST['insert'])) {
                 </form>
               </div>
             </div>
+
+            
+
           </div>
         </div>
       </div>
